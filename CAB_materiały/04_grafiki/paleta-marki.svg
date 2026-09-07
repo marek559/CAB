@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="340" viewBox="0 0 1000 340" role="img" aria-labelledby="title">
+  <title id="title">Proponowana paleta marki CAB</title>
+  <rect width="1000" height="340" fill="#FFFFFF"/>
+  <text x="45" y="55" fill="#091826" font-family="Arial, sans-serif" font-size="28" font-weight="700">CAB — paleta robocza</text>
+  <g font-family="Arial, sans-serif" font-size="15">
+    <g transform="translate(45 95)"><rect width="170" height="150" rx="14" fill="#091826"/><text x="0" y="182" fill="#091826">Deep Navy · #091826</text></g>
+    <g transform="translate(235 95)"><rect width="170" height="150" rx="14" fill="#10151B"/><text x="0" y="182" fill="#091826">Graphite · #10151B</text></g>
+    <g transform="translate(425 95)"><rect width="170" height="150" rx="14" fill="#F4F1E9" stroke="#D5D1C7"/><text x="0" y="182" fill="#091826">Ivory · #F4F1E9</text></g>
+    <g transform="translate(615 95)"><rect width="170" height="150" rx="14" fill="#9FE870"/><text x="0" y="182" fill="#091826">Tech Green · #9FE870</text></g>
+    <g transform="translate(805 95)"><rect width="150" height="150" rx="14" fill="#77C8E8"/><text x="0" y="182" fill="#091826">Data Blue · #77C8E8</text></g>
+  </g>
+</svg>

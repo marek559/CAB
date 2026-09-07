@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Dorobek patentowy analizowanego portfolio</title>
+  <desc id="desc">Czternaście zgłoszeń, siedem udzielonych praw wyłącznych i trzy wyróżnione patenty pozostające w mocy według kart z 28 sierpnia 2026 roku.</desc>
+  <rect width="1200" height="600" fill="#10151B"/>
+  <text x="70" y="80" fill="#9FE870" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">PORTFOLIO ZESPOŁU I ZAPLECZA EKSPERCKIEGO</text>
+  <text x="70" y="130" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="34" font-weight="700">Rozwiązania chronione i zgłoszone</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(70 190)"><rect width="315" height="170" rx="20" fill="#091826" stroke="#315165"/><text x="28" y="73" fill="#9FE870" font-size="62" font-weight="700">14</text><text x="28" y="115" fill="#F4F1E9" font-size="20" font-weight="700">zgłoszeń</text><text x="28" y="142" fill="#B9C5CF" font-size="14">wynalazki i wzory użytkowe</text></g>
+    <g transform="translate(442 190)"><rect width="315" height="170" rx="20" fill="#091826" stroke="#315165"/><text x="28" y="73" fill="#9FE870" font-size="62" font-weight="700">7</text><text x="28" y="115" fill="#F4F1E9" font-size="20" font-weight="700">udzielonych praw</text><text x="28" y="142" fill="#B9C5CF" font-size="14">w analizowanym portfolio</text></g>
+    <g transform="translate(814 190)"><rect width="315" height="170" rx="20" fill="#091826" stroke="#315165"/><text x="28" y="73" fill="#9FE870" font-size="62" font-weight="700">3</text><text x="28" y="115" fill="#F4F1E9" font-size="20" font-weight="700">patenty w mocy*</text><text x="28" y="142" fill="#B9C5CF" font-size="14">wyróżnione przykłady firmowe</text></g>
+  </g>
+  <line x1="70" y1="415" x2="1130" y2="415" stroke="#315165"/>
+  <text x="70" y="460" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="18">Proces chemiczny</text>
+  <text x="350" y="460" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="18">Technologia aluminium</text>
+  <text x="720" y="460" fill="#F4F1E9" font-family="Arial, sans-serif" font-size="18">Recykling paneli PV</text>
+  <text x="70" y="535" fill="#8194A2" font-family="Arial, sans-serif" font-size="13">* Według kart UPRP wygenerowanych 28.08.2026. Prawa należą do uprawnionych wskazanych w rejestrze.</text>
+</svg>
+

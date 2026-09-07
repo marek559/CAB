@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="430" viewBox="0 0 1400 430" role="img" aria-labelledby="title desc">
+  <title id="title">Proces CAB od problemu do wdrożenia</title>
+  <desc id="desc">Sześć etapów: problem, diagnoza, koncepcja, badania, dokumentacja i wdrożenie.</desc>
+  <rect width="1400" height="430" fill="#F4F1E9"/>
+  <text x="70" y="70" fill="#091826" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">OD PROBLEMU DO WDROŻENIA</text>
+  <path d="M105 220H1295" stroke="#091826" stroke-width="3"/>
+  <path d="M1270 202L1295 220L1270 238" fill="none" stroke="#091826" stroke-width="3"/>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(120 220)"><circle r="34" fill="#091826"/><text y="7" text-anchor="middle" fill="#9FE870" font-size="20" font-weight="700">01</text><text x="-50" y="82" fill="#091826" font-size="18" font-weight="700">Problem firmy</text><text x="-50" y="108" fill="#48606F" font-size="14">objaw · strata · cel</text></g>
+    <g transform="translate(345 220)"><circle r="34" fill="#091826"/><text y="7" text-anchor="middle" fill="#9FE870" font-size="20" font-weight="700">02</text><text x="-65" y="82" fill="#091826" font-size="18" font-weight="700">Diagnoza</text><text x="-65" y="108" fill="#48606F" font-size="14">proces · dane · technologia</text></g>
+    <g transform="translate(570 220)"><circle r="34" fill="#091826"/><text y="7" text-anchor="middle" fill="#9FE870" font-size="20" font-weight="700">03</text><text x="-65" y="82" fill="#091826" font-size="18" font-weight="700">Koncepcja</text><text x="-65" y="108" fill="#48606F" font-size="14">warianty · zakres B+R</text></g>
+    <g transform="translate(795 220)"><circle r="34" fill="#091826"/><text y="7" text-anchor="middle" fill="#9FE870" font-size="20" font-weight="700">04</text><text x="-65" y="82" fill="#091826" font-size="18" font-weight="700">Badania</text><text x="-65" y="108" fill="#48606F" font-size="14">prototyp · optymalizacja</text></g>
+    <g transform="translate(1020 220)"><circle r="34" fill="#091826"/><text y="7" text-anchor="middle" fill="#9FE870" font-size="20" font-weight="700">05</text><text x="-75" y="82" fill="#091826" font-size="18" font-weight="700">Dokumentacja</text><text x="-75" y="108" fill="#48606F" font-size="14">techniczna · finansowanie</text></g>
+    <g transform="translate(1245 220)"><circle r="42" fill="#9FE870" stroke="#091826" stroke-width="3"/><text y="7" text-anchor="middle" fill="#091826" font-size="20" font-weight="700">06</text><text x="-65" y="88" fill="#091826" font-size="18" font-weight="700">Wdrożenie</text><text x="-65" y="114" fill="#48606F" font-size="14">implementacja · efekty</text></g>
+  </g>
+</svg>
+

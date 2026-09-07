@@ -1,0 +1,7 @@
+id;obszar;problem_firmy;przyklady;rezultat;proponowany_obraz
+1;Innowacyjne zarządzanie energią i OZE;Wysokie zużycie energii, niewykorzystane OZE lub brak integracji systemów;AgroPV, konstrukcje PV, recykling paneli, chłodnictwo, termomodernizacja, audyty;Model energetyczny, koncepcja, audyt lub rozwiązanie do wdrożenia;energy-oze.jpg
+2;Stomatologia cyfrowa i protetyka DSD;Niespójny workflow cyfrowy, trwałość i estetyka rozwiązania protetycznego;Digital Smile Design, protezy, cyrkon, OVD, szablony, badania materiałowe;Workflow DSD, plan badań, prototyp i kryteria walidacji;dental-dsd.jpg
+3;Nowoczesne materiały;Niedopasowane właściwości materiału lub brak potwierdzenia parametrów;Folie, aluminium, tektura, powłoki, szkło, PVC, materiały stomatologiczne;Specyfikacja, metodyka badań, porównanie wariantów i rekomendacja;materials-lab.jpg
+4;Optymalizacja konstrukcji;Nadmierna masa, materiałochłonność, złożony montaż lub awaryjność;Kontenery, konstrukcje modułowe, AgroPV, stal, stolarka, regały;Zoptymalizowana geometria, prototyp i dokumentacja techniczna;structural-optimization.jpg
+5;Optymalizacja procesów;Wąskie gardła, straty, niestabilna jakość lub nieefektywna linia;Procesy chemiczne, aluminium, folie, rury, pranie, laser, malowanie proszkowe;Parametry procesu, projekt modernizacji i walidacja przemysłowa;process-optimization.jpg
+
