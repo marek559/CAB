@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia</title>
+  <meta name="description" content="CAB Centrum Analizy Badań rozwiązuje problemy technologiczne przedsiębiorstw: diagnoza, optymalizacja konstrukcji, materiałów i procesów, dokumentacja B+R oraz wdrożenia. Spin-off łączący naukę, inżynierię i biznes." />
+  <meta name="theme-color" content="#091826" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="CAB Centrum Analizy Badań — partner technologiczny B+R i wdrożeń" />
+  <meta property="og:description" content="Rozwiązujemy problemy technologiczne przedsiębiorstw. Od diagnozy i badań po dokumentację B+R i wdrożenie w firmie." />
+
+  <!-- Favicon (SVG, do podmiany na docelowe logo) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23091826'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='%239FE870' text-anchor='middle'%3ECAB%3C/text%3E%3C/svg%3E" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ===================== NAWIGACJA ===================== -->
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a class="brand" href="#top" aria-label="CAB Centrum Analizy Badań — strona główna">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40" focusable="false">
+            <rect x="1" y="1" width="38" height="38" rx="10" class="brand__box" />
+            <path d="M11 26 L20 12 L29 26" class="brand__stroke" />
+            <path d="M15 22 H25" class="brand__stroke" />
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">CAB</span>
+          <span class="brand__sub">Centrum Analizy Badań</span>
+        </span>
+      </a>
+
+      <div class="nav__drawer" id="nav-drawer">
+        <nav class="nav__menu" aria-label="Nawigacja główna">
+          <a href="#o-nas">O nas</a>
+          <a href="#obszary">Obszary technologiczne</a>
+          <a href="#patenty">Patenty i wdrożenia</a>
+          <a href="#proces">Jak pracujemy</a>
+          <a href="#programy">Programy B+R</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <a class="btn btn--accent nav__cta" href="#kontakt">Omów problem technologiczny <span aria-hidden="true">→</span></a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero section--dark">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow eyebrow--accent reveal">SPIN-OFF · TECHNOLOGIA · B+R · WDROŻENIA</p>
+          <h1 class="hero__title reveal">Rozwiązujemy problemy <span class="hl">technologiczne</span> przedsiębiorstw.</h1>
+          <p class="hero__lead reveal">
+            Od diagnozy i badań, przez optymalizację konstrukcji, materiałów i procesów, aż po dokumentację
+            oraz wdrożenie w firmie. CAB łączy przedsiębiorców, inżynierów, naukowców i doradców B+R
+            wokół jednego celu: technologii, która działa.
+          </p>
+          <div class="hero__cta reveal">
+            <a class="btn btn--accent" href="#kontakt">Porozmawiajmy o technologii <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#obszary">Zobacz obszary doświadczenia</a>
+          </div>
+          <ul class="hero__highlights reveal">
+            <li><span class="dot" aria-hidden="true"></span>Problemy firm przekładamy na zadania technologiczne</li>
+            <li><span class="dot" aria-hidden="true"></span>Łączymy badania, inżynierię i realia wdrożenia</li>
+            <li><span class="dot" aria-hidden="true"></span>Budujemy rozwiązania z partnerami naukowymi i biznesowymi</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="false">
+          <!-- Grafika: mapa obszarów technologicznych CAB -->
+          <svg class="hero-svg" viewBox="0 0 600 560" role="img" aria-labelledby="hero-svg-title hero-svg-desc">
+            <title id="hero-svg-title">Mapa obszarów technologicznych CAB</title>
+            <desc id="hero-svg-desc">CAB w centrum łączy pięć obszarów: energię i OZE, stomatologię cyfrową, materiały, konstrukcje i procesy produkcyjne.</desc>
+            <defs>
+              <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#9FE870" stop-opacity="0.35" />
+                <stop offset="100%" stop-color="#9FE870" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+
+            <!-- siatka pomiarowa -->
+            <g class="hs-grid" aria-hidden="true">
+              <path d="M0 80H600M0 160H600M0 240H600M0 320H600M0 400H600M0 480H600" />
+              <path d="M80 0V560M160 0V560M240 0V560M320 0V560M400 0V560M480 0V560" />
+            </g>
+
+            <!-- konektory -->
+            <g class="hs-conn" aria-hidden="true">
+              <path d="M300 280 L120 130" />
+              <path d="M300 280 L488 130" />
+              <path d="M300 280 L100 420" />
+              <path d="M300 280 L500 420" />
+              <path d="M300 280 L300 500" />
+            </g>
+
+            <!-- krzywa pomiarowa -->
+            <path class="hs-curve" d="M40 500 C120 470 150 520 220 470 S320 380 380 430 470 520 560 460" aria-hidden="true" />
+
+            <!-- węzły obszarów -->
+            <g class="hs-node" transform="translate(120 130)">
+              <circle r="30" class="hs-node__ring" />
+              <circle r="6" class="hs-node__core" />
+              <text y="-42">01</text>
+              <text y="52" class="hs-node__label">Energia i OZE</text>
+            </g>
+            <g class="hs-node" transform="translate(488 130)">
+              <circle r="30" class="hs-node__ring" />
+              <circle r="6" class="hs-node__core" />
+              <text y="-42">02</text>
+              <text y="52" class="hs-node__label">Stomatologia DSD</text>
+            </g>
+            <g class="hs-node" transform="translate(100 420)">
+              <circle r="30" class="hs-node__ring" />
+              <circle r="6" class="hs-node__core" />
+              <text y="-42">03</text>
+              <text y="52" class="hs-node__label">Materiały</text>
+            </g>
+            <g class="hs-node" transform="translate(500 420)">
+              <circle r="30" class="hs-node__ring" />
+              <circle r="6" class="hs-node__core" />
+              <text y="-42">04</text>
+              <text y="52" class="hs-node__label">Konstrukcje</text>
+            </g>
+            <g class="hs-node" transform="translate(300 500)">
+              <circle r="30" class="hs-node__ring" />
+              <circle r="6" class="hs-node__core" />
+              <text y="-42">05</text>
+              <text y="52" class="hs-node__label">Procesy</text>
+            </g>
+
+            <!-- hub CAB -->
+            <circle cx="300" cy="280" r="120" fill="url(#hubGlow)" aria-hidden="true" />
+            <circle cx="300" cy="280" r="66" class="hs-hub" />
+            <text x="300" y="272" class="hs-hub__title">CAB</text>
+            <text x="300" y="298" class="hs-hub__sub">TECHNOLOGIA + WDROŻENIE</text>
+
+            <!-- narożne znaczniki -->
+            <g class="hs-ticks" aria-hidden="true">
+              <path d="M20 20h26M20 20v26" />
+              <path d="M580 20h-26M580 20v26" />
+              <path d="M20 540h26M20 540v-26" />
+              <path d="M580 540h-26M580 540v-26" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TICKER ===================== -->
+    <div class="ticker section--dark" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Energia i OZE</span><span class="dmnd">◆</span>
+        <span>Stomatologia cyfrowa</span><span class="dmnd">◆</span>
+        <span>Nowoczesne materiały</span><span class="dmnd">◆</span>
+        <span>Optymalizacja konstrukcji</span><span class="dmnd">◆</span>
+        <span>Procesy produkcyjne</span><span class="dmnd">◆</span>
+        <span>Projekty B+R</span><span class="dmnd">◆</span>
+        <span>Audyty energetyczne</span><span class="dmnd">◆</span>
+        <span>Własność intelektualna</span><span class="dmnd">◆</span>
+        <span>Wdrożenia</span><span class="dmnd">◆</span>
+        <!-- duplikat dla płynnej pętli -->
+        <span>Energia i OZE</span><span class="dmnd">◆</span>
+        <span>Stomatologia cyfrowa</span><span class="dmnd">◆</span>
+        <span>Nowoczesne materiały</span><span class="dmnd">◆</span>
+        <span>Optymalizacja konstrukcji</span><span class="dmnd">◆</span>
+        <span>Procesy produkcyjne</span><span class="dmnd">◆</span>
+        <span>Projekty B+R</span><span class="dmnd">◆</span>
+        <span>Audyty energetyczne</span><span class="dmnd">◆</span>
+        <span>Własność intelektualna</span><span class="dmnd">◆</span>
+        <span>Wdrożenia</span><span class="dmnd">◆</span>
+      </div>
+    </div>
+
+    <!-- ===================== 01 · O FIRMIE ===================== -->
+    <section class="section section--light" id="o-nas">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="eyebrow__num">01</span> — Partner technologiczny</p>
+          <h2 class="section__title">Technologia zaczyna się od właściwego zdefiniowania problemu.</h2>
+        </div>
+
+        <div class="about">
+          <div class="about__text reveal">
+            <p class="lead">
+              Firmy zgłaszają się do nas, gdy produkt, proces lub inwestycja wymaga poprawy, nowej wiedzy albo
+              uporządkowanej ścieżki rozwoju. Rozpoznajemy przyczynę problemu, analizujemy dostępne rozwiązania,
+              wskazujemy obszary badań i projektujemy sposób wdrożenia. Tam, gdzie projekt wymaga finansowania
+              zewnętrznego, przekładamy jego warstwę technologiczną na spójną dokumentację B+R.
+            </p>
+
+            <div class="about__cards">
+              <article class="card card--light">
+                <p class="card__kicker">Zarządzanie i własność</p>
+                <p>
+                  CAB jest firmą spin-offową. Prezesem i właścicielem <strong>90% udziałów</strong> jest
+                  Mateusz Wirwicki; pozostałe <strong>10% udziałów</strong> posiada Centrum Transferu
+                  Technologii UTP.
+                </p>
+              </article>
+              <article class="card card--light">
+                <p class="card__kicker">Współpraca</p>
+                <p>
+                  Współpracujemy z naukowcami Politechniki Bydgoskiej im. Jana i Jędrzeja Śniadeckich oraz
+                  Uniwersytetu Kazimierza Wielkiego, a także z firmami doradczymi specjalizującymi się
+                  w projektach B+R. Budujemy zespół zadaniowy wokół konkretnego problemu — od materiałoznawstwa
+                  i konstrukcji po energetykę, medtech i procesy produkcyjne.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="about__visual reveal" aria-label="Schemat: nauka, przedsiębiorstwo, wdrożenie">
+            <svg class="flow-svg" viewBox="0 0 360 420" role="img" aria-labelledby="flow-title">
+              <title id="flow-title">Nauka, przedsiębiorstwo i wdrożenie łączone przez CAB</title>
+              <g class="fs-line" aria-hidden="true">
+                <path d="M180 96 L96 210" />
+                <path d="M180 96 L264 210" />
+                <path d="M96 250 L264 250" />
+                <path d="M120 288 L180 356" />
+                <path d="M240 288 L180 356" />
+              </g>
+
+              <g class="fs-node">
+                <rect x="112" y="40" width="136" height="56" rx="14" />
+                <text x="180" y="66">Nauka</text>
+                <text x="180" y="84" class="fs-node__sub">wiedza · metody · badania</text>
+              </g>
+              <g class="fs-node">
+                <rect x="24" y="212" width="140" height="56" rx="14" />
+                <text x="94" y="238">Przedsiębiorstwo</text>
+                <text x="94" y="256" class="fs-node__sub">problem · proces · zasoby</text>
+              </g>
+              <g class="fs-node fs-node--accent">
+                <rect x="200" y="212" width="140" height="56" rx="14" />
+                <text x="270" y="238">Wdrożenie</text>
+                <text x="270" y="256" class="fs-node__sub">produkt · efekt · pomiar</text>
+              </g>
+              <g class="fs-hub">
+                <circle cx="180" cy="356" r="40" />
+                <text x="180" y="362">CAB</text>
+              </g>
+            </svg>
+            <p class="about__visual-caption">Integrujemy wiedzę naukową, realia przedsiębiorstwa i cel wdrożeniowy w jeden projekt.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 02 · OBSZARY TECHNOLOGICZNE ===================== -->
+    <section class="section section--light section--soft" id="obszary">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="eyebrow__num">02</span> — Obszary technologiczne</p>
+          <h2 class="section__title">Nie dzielimy projektów wyłącznie według branż. Grupujemy je według problemów, które trzeba rozwiązać.</h2>
+        </div>
+
+        <div class="areas">
+          <!-- Obszar 1 -->
+          <article class="area-card card--dark reveal">
+            <div class="area-card__media" aria-hidden="true">
+              <svg viewBox="0 0 120 120" class="thumb"><g class="thumb-g">
+                <circle cx="34" cy="34" r="14" />
+                <path d="M34 12v-6M34 62v-6M12 34H6M62 34h-6M18 18l-4-4M50 50l-4-4M50 18l4-4M18 50l4 4" />
+                <rect x="58" y="66" width="52" height="34" rx="3" />
+                <path d="M58 78h52M58 89h52M71 66v34M84 66v34M97 66v34" />
+                <path d="M12 108h96" class="thumb-accent" />
+              </g></svg>
+            </div>
+            <div class="area-card__body">
+              <span class="area-card__num">01</span>
+              <h3>Innowacyjne zarządzanie energią i OZE</h3>
+              <p class="area-card__problem"><span class="tag-inline">Problem</span> Wysokie zużycie energii, niewykorzystane OZE lub brak integracji systemów.</p>
+              <p>
+                Projektujemy i oceniamy rozwiązania łączące wytwarzanie energii, efektywność procesów oraz sposób
+                użytkowania infrastruktury. Analizujemy nie tylko pojedyncze urządzenie, ale cały układ technologiczny:
+                konstrukcję, profil zużycia energii, warunki pracy, integrację OZE oraz możliwości modernizacji.
+              </p>
+              <p class="area-card__examples"><strong>Przykłady:</strong> mobilne systemy agrofotowoltaiczne, konstrukcje pod panele PV, recykling paneli, audyty efektywności energetycznej, fotowoltaika przemysłowa i handlowa, modernizacja chłodnictwa, termomodernizacja, poprawa efektywności linii produkcyjnych.</p>
+              <p class="area-card__result"><span class="tag-inline tag-inline--accent">Rezultat</span> Koncepcja technologiczna, model energetyczny, zoptymalizowany układ, dokumentacja audytowa, projekt B+R albo rozwiązanie gotowe do wdrożenia.</p>
+            </div>
+          </article>
+
+          <!-- Obszar 2 -->
+          <article class="area-card card--dark reveal">
+            <div class="area-card__media" aria-hidden="true">
+              <svg viewBox="0 0 120 120" class="thumb"><g class="thumb-g">
+                <path d="M40 30c-10 0-16 8-16 20 0 14 6 40 12 40 5 0 4-14 12-14s7 14 12 14c6 0 12-26 12-40 0-12-6-20-16-20-6 0-6 4-12 4s-6-4-12-4z" />
+                <path d="M84 40l22 0M84 40l0 22M84 40l16 16" class="thumb-accent" />
+                <circle cx="96" cy="52" r="3" class="thumb-accent" />
+                <path d="M20 96h80" />
+              </g></svg>
+            </div>
+            <div class="area-card__body">
+              <span class="area-card__num">02</span>
+              <h3>Stomatologia cyfrowa i protetyka — Digital Smile Design</h3>
+              <p class="area-card__problem"><span class="tag-inline">Problem</span> Niespójny workflow cyfrowy, trwałość i estetyka rozwiązania protetycznego.</p>
+              <p>
+                Wspieramy rozwój cyfrowych procesów diagnostycznych, projektowych i wytwórczych w stomatologii.
+                Łączymy podejście Digital Smile Design (DSD), cyfrowy workflow protetyczny, ocenę materiałów oraz
+                projektowanie badań potwierdzających trwałość i funkcjonalność rozwiązania.
+              </p>
+              <p class="area-card__examples"><strong>Przykłady:</strong> cyfrowe projektowanie uśmiechu, protezy dla leczenia bezzębia całkowitego, suprakonstrukcje z cyrkonu, protezy typu OVD, szablony stomatologiczne, ocena wytrzymałości na zginanie i udarności, twardość, stabilność barwy, jakość powierzchni, walidacja doświadczenia pacjenta.</p>
+              <p class="area-card__result"><span class="tag-inline tag-inline--accent">Rezultat</span> Uporządkowany workflow DSD, plan badań, dobór materiału, prototyp, kryteria walidacji i dokumentacja wdrożeniowa.</p>
+            </div>
+          </article>
+
+          <!-- Obszar 3 -->
+          <article class="area-card card--dark reveal">
+            <div class="area-card__media" aria-hidden="true">
+              <svg viewBox="0 0 120 120" class="thumb"><g class="thumb-g">
+                <path d="M24 44l36-16 36 16-36 16z" />
+                <path d="M24 60l36 16 36-16" class="thumb-accent" />
+                <path d="M24 76l36 16 36-16" />
+                <path d="M60 28v64" opacity="0.5" />
+              </g></svg>
+            </div>
+            <div class="area-card__body">
+              <span class="area-card__num">03</span>
+              <h3>Nowoczesne materiały i ocena właściwości</h3>
+              <p class="area-card__problem"><span class="tag-inline">Problem</span> Niedopasowane właściwości materiału lub brak potwierdzenia parametrów.</p>
+              <p>
+                Pomagamy firmom dobrać, zmodyfikować i zweryfikować materiał pod kątem rzeczywistych warunków
+                użytkowania i produkcji. Łączymy analizę literatury i stanu techniki z planem badań, testami
+                porównawczymi oraz oceną możliwości przemysłowego zastosowania.
+              </p>
+              <p class="area-card__examples"><strong>Przykłady:</strong> folie i opakowania, tacki aluminiowe, tektura modułowa, powłoki funkcjonalne, szkło i powierzchnie hydrofobowe, materiały stomatologiczne, profile PVC, materiały izolacyjne, komponenty narażone na ściskanie, zużycie lub zmienne temperatury.</p>
+              <p class="area-card__result"><span class="tag-inline tag-inline--accent">Rezultat</span> Wymagania materiałowe, metodyka badawcza, porównanie wariantów, wskazanie technologii wytwarzania i rekomendacja wdrożeniowa.</p>
+            </div>
+          </article>
+
+          <!-- Obszar 4 -->
+          <article class="area-card card--dark reveal">
+            <div class="area-card__media" aria-hidden="true">
+              <svg viewBox="0 0 120 120" class="thumb"><g class="thumb-g">
+                <path d="M20 92V40l40-20 40 20v52" />
+                <path d="M20 92h80" class="thumb-accent" />
+                <path d="M20 40l40 20 40-20M60 60v32M36 50v42M84 50v42" />
+                <circle cx="20" cy="40" r="3" class="thumb-accent" />
+                <circle cx="100" cy="40" r="3" class="thumb-accent" />
+                <circle cx="60" cy="20" r="3" class="thumb-accent" />
+              </g></svg>
+            </div>
+            <div class="area-card__body">
+              <span class="area-card__num">04</span>
+              <h3>Optymalizacja konstrukcji i produktów</h3>
+              <p class="area-card__problem"><span class="tag-inline">Problem</span> Nadmierna masa, materiałochłonność, złożony montaż lub awaryjność.</p>
+              <p>
+                Usprawniamy konstrukcje tak, aby były lżejsze, prostsze w produkcji i montażu, bardziej niezawodne
+                oraz lepiej dopasowane do potrzeb użytkownika. Analizujemy geometrię, obciążenia, połączenia,
+                materiałochłonność i ograniczenia procesu produkcyjnego.
+              </p>
+              <p class="area-card__examples"><strong>Przykłady:</strong> zoptymalizowane kontenery mieszkalne, konstrukcje modułowe, systemy wsporcze AgroPV, konstrukcje stalowe, stolarka okienna i drzwiowa, regały, stoły magnetyczne, narzędzia przemysłowe i elementy transportowe.</p>
+              <p class="area-card__result"><span class="tag-inline tag-inline--accent">Rezultat</span> Warianty konstrukcji, założenia do symulacji, model lub prototyp, redukcja masy i materiałochłonności, uproszczenie montażu oraz dokumentacja techniczna.</p>
+            </div>
+          </article>
+
+          <!-- Obszar 5 -->
+          <article class="area-card card--dark reveal">
+            <div class="area-card__media" aria-hidden="true">
+              <svg viewBox="0 0 120 120" class="thumb"><g class="thumb-g">
+                <circle cx="30" cy="44" r="12" />
+                <circle cx="66" cy="72" r="12" />
+                <circle cx="96" cy="40" r="10" class="thumb-accent" />
+                <path d="M42 44h12M30 56v4M66 60V48M78 68l10-16" />
+                <path d="M14 96h92" />
+                <path d="M30 32V22M96 30V22" class="thumb-accent" />
+              </g></svg>
+            </div>
+            <div class="area-card__body">
+              <span class="area-card__num">05</span>
+              <h3>Optymalizacja technologii i procesów produkcyjnych</h3>
+              <p class="area-card__problem"><span class="tag-inline">Problem</span> Wąskie gardła, straty, niestabilna jakość lub nieefektywna linia.</p>
+              <p>
+                Rozwiązujemy problemy na styku produktu, maszyny i procesu. Identyfikujemy wąskie gardła, zmienne
+                krytyczne i źródła strat, a następnie projektujemy eksperymenty, modyfikacje procesu oraz sposób
+                ich wdrożenia w przedsiębiorstwie.
+              </p>
+              <p class="area-card__examples"><strong>Przykłady:</strong> proces wytwarzania tlenku diazotu, produkcja tacek aluminiowych, konfekcjonowanie folii, wytwarzanie profili i rur, technologie prania tekstyliów, obróbka stali, cięcie laserowe, malowanie proszkowe, modernizacja linii technologicznych.</p>
+              <p class="area-card__result"><span class="tag-inline tag-inline--accent">Rezultat</span> Zoptymalizowane parametry procesu, projekt stanowiska lub linii, ograniczenie strat, poprawa jakości i powtarzalności oraz technologia gotowa do przemysłowej walidacji.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 03 · PATENTY I WDROŻENIA ===================== -->
+    <section class="section section--dark" id="patenty">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow eyebrow--accent"><span class="eyebrow__num">03</span> — Własność intelektualna i wdrożenia</p>
+          <h2 class="section__title">Od rozwiązania problemu do technologii chronionej i możliwej do wdrożenia.</h2>
+          <p class="section__lead">
+            Nasze doświadczenie nie kończy się na analizie. Uczestniczymy w projektowaniu rozwiązań, budowaniu ich
+            uzasadnienia technologicznego, planowaniu badań, przygotowaniu dokumentacji ochronnej i przejściu do
+            zastosowania w przedsiębiorstwie. W analizowanym portfolio zespołu i jego zaplecza eksperckiego znajduje
+            się <strong>14 zgłoszeń</strong> wynalazków i wzorów użytkowych oraz <strong>7 historycznie udzielonych
+            praw wyłącznych</strong>.
+          </p>
+        </div>
+
+        <div class="patents">
+          <!-- Statystyki dorobku -->
+          <div class="stats reveal" aria-label="Dorobek analizowanego portfolio">
+            <div class="stat">
+              <span class="stat__num">14</span>
+              <span class="stat__label">zgłoszeń</span>
+              <span class="stat__desc">wynalazki i wzory użytkowe</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">7</span>
+              <span class="stat__label">udzielonych praw</span>
+              <span class="stat__desc">historycznie, w analizowanym portfolio</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">3</span>
+              <span class="stat__label">patenty w mocy<sup>*</sup></span>
+              <span class="stat__desc">wyróżnione przykłady firmowe</span>
+            </div>
+          </div>
+
+          <!-- Wyróżnione patenty -->
+          <div class="patent-list">
+            <article class="patent-card reveal">
+              <div class="patent-card__top">
+                <span class="badge badge--accent">Prawo w mocy</span>
+                <span class="patent-card__no">Pat.245586</span>
+              </div>
+              <h3>Sposób wytwarzania tlenku diazotu</h3>
+              <p>Przemysłowa technologia procesu, przeznaczona m.in. do zastosowań medycznych.</p>
+              <div class="patent-card__tags"><span>proces</span><span>chemia</span><span>medycyna</span></div>
+            </article>
+
+            <article class="patent-card reveal">
+              <div class="patent-card__top">
+                <span class="badge badge--accent">Prawo w mocy</span>
+                <span class="patent-card__no">Pat.242732</span>
+              </div>
+              <h3>Sposób wytwarzania tacek aluminiowych</h3>
+              <p>Optymalizacja technologii wytwarzania produktu z aluminium.</p>
+              <div class="patent-card__tags"><span>aluminium</span><span>produkcja</span><span>optymalizacja</span></div>
+            </article>
+
+            <article class="patent-card reveal">
+              <div class="patent-card__top">
+                <span class="badge badge--accent">Prawo w mocy</span>
+                <span class="patent-card__no">Pat.247446</span>
+              </div>
+              <h3>Sposób recyklingu paneli fotowoltaicznych</h3>
+              <p>Technologia odzysku i gospodarki obiegu zamkniętego dla sektora PV.</p>
+              <div class="patent-card__tags"><span>PV</span><span>recykling</span><span>GOZ</span></div>
+            </article>
+          </div>
+
+          <!-- Dorobek uczelniany + wdrożenia -->
+          <div class="patents__notes">
+            <div class="note-card reveal">
+              <p class="card__kicker card__kicker--accent">Dorobek zaplecza uczelnianego</p>
+              <p>
+                Zaplecze eksperckie współpracujące z CAB ma również doświadczenie twórcze przy czterech
+                rozwiązaniach należących do uczelni, dla których udzielono patentu lub prawa ochronnego na wzór
+                użytkowy. Dorobek ten obejmuje rozwiązania z obszaru rehabilitacji, dostępności i technologii
+                wspierających osoby z niepełnosprawnościami.
+              </p>
+            </div>
+
+            <div class="note-card note-card--placeholder reveal">
+              <p class="card__kicker card__kicker--accent">Potwierdzone wdrożenia</p>
+              <p class="placeholder-text">
+                [TU WSTAW POTWIERDZONE WDROŻENIA: nazwa technologii / branża / problem / rezultat / zgoda na
+                publikację klienta]
+              </p>
+              <p class="note-card__hint">Sekcja przygotowana modułowo — kolejne wdrożenia dodasz bez przebudowy strony.</p>
+            </div>
+          </div>
+
+          <p class="disclaimer reveal">
+            Prawa do poszczególnych rozwiązań należą do podmiotów wskazanych w rejestrze UPRP. Informacja prezentuje
+            doświadczenie twórcze i technologiczne zespołu; nie oznacza, że CAB jest właścicielem wszystkich
+            wymienionych praw. <br />
+            <sup>*</sup> Według kart UPRP wygenerowanych 28.08.2026 r. Status ochrony wymaga okresowej weryfikacji w UPRP.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 04 · JAK PRACUJEMY ===================== -->
+    <section class="section section--light" id="proces">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="eyebrow__num">04</span> — Od problemu do wdrożenia</p>
+          <h2 class="section__title">Od problemu firmy do wdrożenia — w sześciu czytelnych etapach.</h2>
+          <p class="section__lead">
+            Nie zaczynamy od formularza. Zaczynamy od procesu, produktu i problemu przedsiębiorstwa. Dopiero gdy
+            technologia jest logicznie ułożona, budujemy dla niej plan badań, dokumentację i — jeżeli jest to
+            potrzebne — ścieżkę finansowania.
+          </p>
+        </div>
+
+        <ol class="timeline reveal">
+          <li class="timeline__step">
+            <span class="timeline__num">01</span>
+            <h3>Problem firmy</h3>
+            <p>Objaw, ograniczenie, strata lub niewykorzystana możliwość.</p>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">02</span>
+            <h3>Diagnoza technologiczna</h3>
+            <p>Proces, dane, materiały, konstrukcja i stan techniki.</p>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">03</span>
+            <h3>Koncepcja rozwiązania</h3>
+            <p>Hipotezy, warianty, zakres B+R i kryteria sukcesu.</p>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">04</span>
+            <h3>Badania i optymalizacja</h3>
+            <p>Prototyp, eksperymenty, obliczenia i walidacja.</p>
+          </li>
+          <li class="timeline__step">
+            <span class="timeline__num">05</span>
+            <h3>Dokumentacja i finansowanie</h3>
+            <p>Dokumentacja techniczna, agenda B+R, materiały konkursowe i audyty.</p>
+          </li>
+          <li class="timeline__step timeline__step--final">
+            <span class="timeline__num">06</span>
+            <h3>Wdrożenie w firmie</h3>
+            <p>Implementacja, pomiary efektów i dalsza optymalizacja.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== 05 · EKOSYSTEM WSPÓŁPRACY ===================== -->
+    <section class="section section--dark section--ecosystem">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow eyebrow--accent"><span class="eyebrow__num">05</span> — Współpraca</p>
+          <h2 class="section__title">Właściwe kompetencje wokół konkretnego wyzwania.</h2>
+        </div>
+
+        <div class="ecosystem reveal">
+          <article class="eco-card eco-card--hub">
+            <span class="eco-card__role">Koordynacja</span>
+            <h3>CAB</h3>
+            <p>Diagnoza, integracja wiedzy, koncepcja technologii i koordynacja całego projektu.</p>
+          </article>
+          <article class="eco-card">
+            <span class="eco-card__role">01</span>
+            <h3>Przedsiębiorstwo</h3>
+            <p>Problem, proces, zasoby i wdrożenie w realnym środowisku firmy.</p>
+          </article>
+          <article class="eco-card">
+            <span class="eco-card__role">02</span>
+            <h3>Naukowcy</h3>
+            <p>Specjalistyczna wiedza, metody badawcze i infrastruktura Politechniki Bydgoskiej oraz Uniwersytetu Kazimierza Wielkiego.</p>
+          </article>
+          <article class="eco-card">
+            <span class="eco-card__role">03</span>
+            <h3>Firmy doradcze B+R</h3>
+            <p>Dopasowanie projektu do programu finansowania i procesu aplikacyjnego.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 06 · PROGRAMY B+R ===================== -->
+    <section class="section section--light section--soft" id="programy">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow"><span class="eyebrow__num">06</span> — Finansowanie jako narzędzie rozwoju</p>
+          <h2 class="section__title">Warstwę technologiczną projektu przekładamy na język programu.</h2>
+          <p class="section__lead">
+            Przygotowujemy koncepcje, agendy badawcze, opisy technologii, plany badań, analizy stanu techniki,
+            uzasadnienie innowacyjności, dokumentację audytową i załączniki techniczne. Współpracujemy przy tym
+            z firmami doradczymi odpowiedzialnymi za proces aplikacyjny.
+          </p>
+        </div>
+
+        <div class="programs">
+          <article class="program-card card--light reveal">
+            <h3>Ścieżka SMART / FENG</h3>
+            <p class="program-card__scope">Projekty B+R, agendy, plany badań, opisy technologii i innowacyjności.</p>
+            <p class="program-card__exp">Przygotowywaliśmy warstwę technologiczną i materiały projektowe.</p>
+          </article>
+          <article class="program-card card--light reveal">
+            <h3>Bony na innowacje dla MŚP / POIR</h3>
+            <p class="program-card__scope">Rozwój produktów, współpraca z jednostkami naukowymi i dokumentacja aplikacyjna.</p>
+            <p class="program-card__exp">Wspieraliśmy przygotowanie projektów rozwoju technologii.</p>
+          </article>
+          <article class="program-card card--light reveal">
+            <h3>Fundusz Badań i Wdrożeń 3.0</h3>
+            <p class="program-card__scope">Badania przemysłowe, eksperymentalne prace rozwojowe i wdrożenie.</p>
+            <p class="program-card__exp">Przygotowywaliśmy materiały dla przedsięwzięć B+R i wdrożeniowych.</p>
+          </article>
+          <article class="program-card card--light reveal">
+            <h3>Kredyt Ekologiczny / FENG</h3>
+            <p class="program-card__scope">Audyty efektywności energetycznej i dokumentacja inwestycji.</p>
+            <p class="program-card__exp">Opracowywaliśmy analizy i dokumentację audytową.</p>
+          </article>
+          <article class="program-card card--light reveal">
+            <h3>FEnIKS</h3>
+            <p class="program-card__scope">Efektywność energetyczna i projekty środowiskowe.</p>
+            <p class="program-card__exp">Pracowaliśmy z wymaganiami i materiałami programu.</p>
+          </article>
+          <article class="program-card card--light reveal">
+            <h3>Horyzont 2020 i GEKON</h3>
+            <p class="program-card__scope">Dokumentacja projektów badawczych oraz środowiskowych.</p>
+            <p class="program-card__exp">Posiadamy doświadczenie w pracy z dokumentacją programów.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KONTAKT ===================== -->
+    <section class="section section--contact" id="kontakt">
+      <div class="container">
+        <div class="contact">
+          <div class="contact__intro reveal">
+            <p class="eyebrow">Porozmawiajmy</p>
+            <h2 class="section__title">Masz problem technologiczny? Zacznijmy od jego uporządkowania.</h2>
+            <p class="section__lead">
+              Opisz produkt, proces lub inwestycję oraz efekt, który chcesz osiągnąć. Wskażemy, jakie analizy,
+              badania, kompetencje i kolejne kroki mogą być potrzebne.
+            </p>
+
+            <ul class="contact__details">
+              <li><span class="contact__label">E-mail</span><span class="ph">[e-mail]</span></li>
+              <li><span class="contact__label">Telefon</span><span class="ph">[telefon]</span></li>
+              <li><span class="contact__label">Adres</span><span class="ph">[miasto / adres]</span></li>
+              <li><span class="contact__label">LinkedIn</span><span class="ph">[link do profilu]</span></li>
+              <li><span class="contact__label">Dane rejestrowe</span><span class="ph">[do uzupełnienia]</span></li>
+            </ul>
+          </div>
+
+          <form class="contact__form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Imię i nazwisko <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="company">Firma</label>
+                <input type="text" id="company" name="company" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="phone">Telefon <span class="opt">(opcjonalnie)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="area">Obszar problemu</label>
+              <select id="area" name="area">
+                <option value="">Wybierz obszar…</option>
+                <option>Projekt B+R</option>
+                <option>Dokumentacja konkursowa</option>
+                <option>Audyt energetyczny</option>
+                <option>Analiza technologii</option>
+                <option>Optymalizacja konstrukcji</option>
+                <option>Optymalizacja procesu</option>
+                <option>Stomatologia cyfrowa / DSD</option>
+                <option>Inne</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Opis wyzwania <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Produkt / proces / inwestycja, obecny etap i oczekiwany efekt."></textarea>
+            </div>
+            <div class="field field--check">
+              <input type="checkbox" id="rodo" name="rodo" required />
+              <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania zgodnie z polityką prywatności. <span class="req" aria-hidden="true">*</span></label>
+            </div>
+            <button type="submit" class="btn btn--accent btn--full">Wyślij opis problemu <span aria-hidden="true">→</span></button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-note">Formularz wymaga podłączenia usługi wysyłki (np. Formspree lub własny endpoint) przed publikacją.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== STOPKA ===================== -->
+  <footer class="footer section--dark">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__name">CAB Centrum Analizy Badań</span>
+        <span class="eyebrow eyebrow--accent">Analiza · B+R · Wdrożenia</span>
+      </div>
+      <nav class="footer__links" aria-label="Nawigacja w stopce">
+        <a href="#o-nas">O nas</a>
+        <a href="#obszary">Obszary technologiczne</a>
+        <a href="#patenty">Patenty i wdrożenia</a>
+        <a href="#proces">Jak pracujemy</a>
+        <a href="#programy">Programy B+R</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#" class="is-placeholder">Polityka prywatności</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> CAB Centrum Analizy Badań.</p>
+      <p class="footer__note">Dane rejestrowe i polityka prywatności — do uzupełnienia przed publikacją.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
