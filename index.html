@@ -16,10 +16,9 @@
   <!-- Favicon: niebieski znak A z logo CAB -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B0D12'/%3E%3Cpath d='M9 24 L16.5 9 L24 24' fill='none' stroke='%232E5BFF' stroke-width='4.2' stroke-linejoin='miter'/%3E%3C/svg%3E" />
 
-  <!-- Fonty wspólne z lumafi.pl -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Fonty wspólne z lumafi.pl, hostowane lokalnie (assets/fonts) -->
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -63,6 +62,7 @@
           <a href="#o-nas"><i class="nav__dot" aria-hidden="true"></i>O nas</a>
           <a href="#proces"><i class="nav__dot" aria-hidden="true"></i>Jak działamy</a>
           <a href="#obszary"><i class="nav__dot" aria-hidden="true"></i>Obszary</a>
+          <a href="marek-andryszczyk/"><i class="nav__dot" aria-hidden="true"></i>Zespół</a>
         </nav>
         <a class="btn btn--accent btn--sm nav__cta" href="#kontakt">Kontakt</a>
       </div>
@@ -482,12 +482,9 @@
               <label for="message">Opis wyzwania <span class="req" aria-hidden="true">*</span></label>
               <textarea id="message" name="message" rows="5" required placeholder="Produkt / proces / inwestycja, obecny etap i oczekiwany efekt."></textarea>
             </div>
-            <div class="field field--check">
-              <input type="checkbox" id="rodo" name="rodo" required />
-              <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych w celu obsługi zapytania zgodnie z polityką prywatności. <span class="req" aria-hidden="true">*</span></label>
-            </div>
             <button type="submit" class="btn btn--accent">Wyślij opis problemu <span class="btn__arrow" aria-hidden="true">→</span></button>
             <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-legal">Dane z formularza wykorzystamy wyłącznie do odpowiedzi na Twoje zapytanie. Szczegóły: <a href="polityka-prywatnosci.html">polityka prywatności</a>.</p>
           </form>
         </div>
       </div>
@@ -499,8 +496,7 @@
     <div class="wrap footer__grid">
       <div class="footer__brand">
         <a class="brand" href="#top" aria-label="CAB Centrum Analizy Badań — na górę strony">
-          <img class="brand__logo brand__logo--lg" src="assets/logo-cab-znak.png" alt="CAB" width="89" height="36" />
-          <span class="brand__sub">Centrum<br />Analizy Badań</span>
+          <img class="brand__logo brand__logo--full" src="assets/logo-cab.png" alt="CAB Centrum Analizy Badań" width="209" height="48" />
         </a>
         <p class="footer__slogan">Analiza · B+R · Wdrożenia</p>
         <p class="footer__desc">Partner technologiczny przedsiębiorstw: diagnoza, badania, optymalizacja, dokumentacja B+R i wdrożenia.</p>
@@ -512,6 +508,7 @@
         <a href="#proces">Jak działamy</a>
         <a href="#obszary">Obszary</a>
         <a href="#doswiadczenie">Doświadczenie</a>
+        <a href="marek-andryszczyk/">Zespół</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
@@ -519,7 +516,7 @@
         <p class="minilabel">Kontakt</p>
         <a href="mailto:andryszczyk.marek@gmail.com">andryszczyk.marek@gmail.com</a>
         <a href="tel:+48609222466">+48 609 222 466</a>
-        <a href="#" class="is-placeholder">Polityka prywatności</a>
+        <a href="polityka-prywatnosci.html">Polityka prywatności</a>
       </div>
 
       <!-- Dane spółki wg odpisu KRS (stan na 23.09.2026), zakres wg art. 206 KSH -->
