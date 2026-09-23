@@ -42,6 +42,13 @@
     if (e.key === "Escape") closeMenu();
   });
 
+  /* ---------- Zwężenie menu po przewinięciu ---------- */
+  function onScroll() {
+    if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
   /* ---------- Animacje reveal przy scrollu ---------- */
   var reveals = document.querySelectorAll(".reveal");
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -90,11 +97,36 @@
   }
 
   /* ---------- Obsługa formularza kontaktowego ----------
-     Uwaga: to jest walidacja i informacja zwrotna po stronie
-     przeglądarki. Realna wysyłka wymaga podłączenia backendu
-     (np. Formspree lub własny endpoint) — patrz form-note w HTML. */
+     FORM_ENDPOINT: adres usługi wysyłki (np. https://formspree.io/f/xxxx).
+     Dopóki jest pusty, formularz otwiera program pocztowy z gotową
+     wiadomością na CONTACT_EMAIL — zapytanie nie przepada. */
+  var FORM_ENDPOINT = "";
+  var CONTACT_EMAIL = "andryszczyk.marek@gmail.com";
+
   var form = document.getElementById("contact-form");
   var status = document.getElementById("form-status");
+
+  function setStatus(kind, text) {
+    status.className = "form-status is-" + kind;
+    status.textContent = text;
+  }
+
+  function sendByMail() {
+    var d = new FormData(form);
+    var lines = [
+      "Imię i nazwisko: " + d.get("name"),
+      "Firma: " + (d.get("company") || "—"),
+      "E-mail: " + d.get("email"),
+      "Telefon: " + (d.get("phone") || "—"),
+      "",
+      d.get("message")
+    ];
+    window.location.href =
+      "mailto:" + CONTACT_EMAIL +
+      "?subject=" + encodeURIComponent("Zapytanie ze strony CAB — " + d.get("name")) +
+      "&body=" + encodeURIComponent(lines.join("\n"));
+    setStatus("ok", "Otwieramy Twój program pocztowy z gotową wiadomością — wystarczy ją wysłać. Jeśli nic się nie otworzyło, napisz na " + CONTACT_EMAIL + ".");
+  }
 
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -105,16 +137,24 @@
       if (!form.checkValidity()) {
         var firstInvalid = form.querySelector(":invalid");
         if (firstInvalid) firstInvalid.focus();
-        status.classList.add("is-error");
-        status.textContent = "Uzupełnij wymagane pola oznaczone gwiazdką.";
+        setStatus("error", "Uzupełnij wymagane pola oznaczone gwiazdką.");
         return;
       }
 
-      // Placeholder wysyłki — do zastąpienia integracją z usługą e-mail.
-      status.classList.add("is-ok");
-      status.textContent =
-        "Dziękujemy. Formularz jest gotowy — przed publikacją podłącz usługę wysyłki, aby zapytania trafiały na skrzynkę CAB.";
-      form.reset();
+      if (!FORM_ENDPOINT) {
+        sendByMail();
+        return;
+      }
+
+      fetch(FORM_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          setStatus("ok", "Dziękujemy — wiadomość dotarła. Odpowiemy najszybciej, jak to możliwe.");
+          form.reset();
+        })
+        .catch(function () {
+          setStatus("error", "Nie udało się wysłać formularza. Napisz do nas bezpośrednio: " + CONTACT_EMAIL + ".");
+        });
     });
   }
 })();
