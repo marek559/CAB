@@ -42,6 +42,29 @@
     if (e.key === "Escape") closeMenu();
   });
 
+  /* ---------- Rozwijana lista „Zespół” ---------- */
+  var teamBtn = document.getElementById("team-btn");
+  var teamMenu = document.getElementById("team-menu");
+
+  function setTeam(open) {
+    if (!teamBtn || !teamMenu) return;
+    teamBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    teamMenu.hidden = !open;
+  }
+
+  if (teamBtn && teamMenu) {
+    teamBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setTeam(teamMenu.hidden);
+    });
+    document.addEventListener("click", function (e) {
+      if (!teamMenu.hidden && !e.target.closest(".nav__team")) setTeam(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setTeam(false);
+    });
+  }
+
   /* ---------- Zwężenie menu po przewinięciu ---------- */
   function onScroll() {
     if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 24);
