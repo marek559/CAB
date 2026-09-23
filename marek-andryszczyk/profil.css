@@ -4,7 +4,7 @@
    układ wzorowany na llhqv2.vercel.app.
    ============================================================ */
 
-.page-profil { background: var(--white); }
+.page-profil { background: var(--white); --sec-y: clamp(48px, 5vw, 76px); }
 
 /* ---------- Znak osobisty ---------- */
 .pbrand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
@@ -56,7 +56,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: clamp(120px, 11vw, 150px) 0 clamp(56px, 6vw, 80px);
+  padding: clamp(116px, 10vw, 140px) 0 clamp(40px, 4vw, 56px);
   background: linear-gradient(180deg, #F3F5FA 0%, var(--canvas) 60%, var(--white) 100%);
 }
 .phero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
@@ -163,7 +163,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
-  margin: clamp(48px, 5vw, 64px) 0 0;
+  margin: clamp(36px, 4vw, 52px) 0 0;
   background: var(--line-2);
   border: 1px solid var(--line-2);
   border-radius: 20px;
@@ -185,13 +185,13 @@
 .psec { position: relative; padding: var(--sec-y) 0; }
 .psec--white { background: var(--white); }
 .psec--canvas { background: var(--canvas); }
-#podejscie { padding-top: clamp(24px, 3vw, 40px); }
+#podejscie { padding-top: clamp(8px, 1.5vw, 20px); }
 .psec__head {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: clamp(28px, 4vw, 64px);
   align-items: end;
-  margin-bottom: clamp(36px, 4vw, 52px);
+  margin-bottom: clamp(28px, 3vw, 40px);
 }
 .psec__title {
   max-width: 18ch;
@@ -455,8 +455,8 @@
 /* pasek: rola i branże */
 .rnd {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 20px 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 32px;
   margin-top: 16px;
   padding: 22px 24px;
   border: 1px solid var(--line-2);
