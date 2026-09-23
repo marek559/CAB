@@ -449,6 +449,7 @@
 .archive__meta { display: flex; gap: 16px; font-size: 13px; color: var(--muted); white-space: nowrap; }
 .archive__meta span + span { font-family: var(--font-mono); font-size: 11px; color: var(--grey); }
 .archive__row:hover .archive__meta span + span { color: var(--blue); }
+.archive .badge-s { border-radius: 10px; line-height: 1.4; }
 .archive__note { padding: 12px 24px 16px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.55; color: var(--muted); }
 
 /* pasek: rola i branże */
