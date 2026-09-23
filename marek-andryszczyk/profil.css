@@ -353,6 +353,9 @@
 
 /* ---------- Rozwiązania dla przemysłu ---------- */
 .inventions { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.inventions > li { display: flex; }
+.inventions > li > .invention { flex: 1; color: var(--ink); }
+.inventions > li > .invention:focus-visible { outline-offset: 2px; border-radius: 18px; }
 .invention {
   display: flex;
   flex-direction: column;
@@ -376,7 +379,8 @@
   font-size: 13px;
   color: var(--muted);
 }
-.invention__meta span + span { font-family: var(--font-mono); font-size: 11px; color: var(--grey); white-space: nowrap; }
+.invention__meta span + span { font-family: var(--font-mono); font-size: 11px; color: var(--grey); white-space: nowrap; transition: color 0.2s ease; }
+.invention:hover .invention__meta span + span { color: var(--blue); }
 .badge-s {
   padding: 5px 9px;
   border-radius: 999px;
@@ -392,6 +396,60 @@
 .invention--note { background: transparent; border-style: dashed; }
 .invention--note:hover { transform: none; box-shadow: none; border-color: var(--line-2); }
 .invention--note p:not(.minilabel) { font-size: 13.5px; line-height: 1.6; color: var(--muted); }
+
+/* wcześniejsze prawa (wygasłe) */
+.archive {
+  margin-top: 16px;
+  border: 1px solid var(--line-2);
+  border-radius: 18px;
+  background: var(--white);
+}
+.archive summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  list-style: none;
+  cursor: pointer;
+}
+.archive summary::-webkit-details-marker { display: none; }
+.archive summary .minilabel { margin: 0; color: var(--slate); }
+.archive__count {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--canvas);
+  border: 1px solid var(--line-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.archive__hint { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600; color: var(--blue); }
+.archive__hint::after { content: "+"; font-size: 18px; line-height: 1; }
+.archive[open] .archive__hint { font-size: 0; }
+.archive[open] .archive__hint::after { content: "−"; font-size: 18px; }
+.archive__list { border-top: 1px solid var(--line); }
+.archive__list li + li { border-top: 1px solid var(--line); }
+.archive__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 14px 24px;
+  color: var(--ink);
+  transition: background 0.2s ease;
+}
+.archive__row:hover { background: var(--canvas); color: var(--ink); }
+.archive__main { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.archive__kind { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); }
+.archive__title { flex-basis: 100%; font-family: var(--font-head); font-size: 15.5px; font-weight: 600; line-height: 1.4; }
+.archive__meta { display: flex; gap: 16px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.archive__meta span + span { font-family: var(--font-mono); font-size: 11px; color: var(--grey); }
+.archive__row:hover .archive__meta span + span { color: var(--blue); }
+.archive__note { padding: 12px 24px 16px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.55; color: var(--muted); }
 
 /* pasek: rola i branże */
 .rnd {
@@ -545,6 +603,8 @@
 }
 
 @media (max-width: 620px) {
+  .archive__row { grid-template-columns: 1fr; }
+  .archive__meta { white-space: normal; flex-wrap: wrap; }
   .phero__roles i { margin: 0 5px; }
   .approach__steps { grid-template-columns: 1fr; }
   .inventions { grid-template-columns: 1fr; }
