@@ -1,6 +1,6 @@
 /* ============================================================
-   Marek Andryszczyk — materiały drukowane (wizytówka, oferta)
-   Kolorystyka i czcionki wspólne ze stroną i z lumafi.pl
+   CAB Centrum Analizy Badań — materiały drukowane (wizytówka, ulotka)
+   Kolorystyka i czcionki wspólne ze stroną cab-innowacje.com i z lumafi.pl
    ============================================================ */
 
 @font-face { font-family: "Space Grotesk"; font-weight: 400 700; font-display: block;
@@ -50,56 +50,6 @@ body {
 }
 p, h1, h2, h3, ul, ol { margin: 0; padding: 0; }
 ul, ol { list-style: none; }
-
-/* ---------- Logo — ten sam znak wszędzie ---------- */
-.logo { display: inline-flex; align-items: center; gap: 2.6mm; color: var(--ink); }
-.logo__mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: none;
-  width: 9mm;
-  height: 9mm;
-  border-radius: 2.4mm;
-  background: var(--ink);
-  color: #fff;
-  font-family: var(--f-head);
-  font-weight: 700;
-  font-size: 12pt;
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-/* kropka logo jako okrąg — jej środek jest też środkiem półokręgów w tle */
-.logo__mark b { font-weight: inherit; white-space: nowrap; }
-.logo__mark .dot {
-  display: inline-block;
-  width: 0.23em;
-  height: 0.23em;
-  margin-left: 0.06em;
-  border-radius: 50%;
-  background: var(--blue-light);
-  vertical-align: baseline;
-}
-.logo__name {
-  padding-left: 2.6mm;
-  border-left: 0.3mm solid currentColor;
-  border-color: rgba(155, 157, 168, 0.55);
-  font-family: var(--f-head);
-  font-weight: 700;
-  font-size: 11.5pt;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-.logo__name small {
-  display: block;
-  margin-top: 0.6mm;
-  font-family: var(--f-mono);
-  font-weight: 500;
-  font-size: 6.5pt;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 
 .hl { color: var(--blue); }
 

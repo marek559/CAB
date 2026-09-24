@@ -1,8 +1,12 @@
-# Kontekst projektu — strona CAB, wizytówka i materiały do druku
+# Kontekst projektu — strona CAB i materiały firmowe do druku
 
 Dokument zbiera w jednym miejscu wszystko, co trzeba wiedzieć, żeby dalej rozwijać stronę
-CAB Centrum Analizy Badań, stronę-wizytówkę mgr. inż. Marka Andryszczyka oraz wizytówki i ulotki.
-Stan na **24.09.2026**. Właścicielem decyzji jest Marek Andryszczyk.
+CAB Centrum Analizy Badań oraz firmową wizytówkę i ulotkę. Stan na **24.09.2026**.
+Właścicielem decyzji jest Marek Andryszczyk.
+
+Strona-wizytówka Marka i jego osobista wizytówka do druku mają od 24.09.2026 **osobne repozytorium**
+`marek559/andryszczyk` (adres https://andryszczyk.eu/). Ich kontekst, zasady treści i tabela patentów
+są w `README.md` tamtego repozytorium.
 
 > Plik leży w publicznym repozytorium i jest dostępny także pod adresem strony
 > (`cab-innowacje.com/KONTEKST.md`). Nie wpisuj tu danych poufnych: PESEL, adresu domowego,
@@ -46,13 +50,13 @@ Dziś jest tylko w stopce.
 | Adres | Stan (24.09.2026) |
 |---|---|
 | `https://cab-innowacje.com/` | Strona CAB. GitHub Pages z repozytorium `marek559/CAB`, plik `CNAME`. HTTPS działa, http przekierowuje na https, rekord `www` wskazuje na `marek559.github.io`. |
-| `https://cab-innowacje.com/marek-andryszczyk/` | Strona-wizytówka Marka. |
-| `andryszczyk.eu` (OVH) | Przekierowanie **maskowane** (ramka) na `http://cab-innowacje.com/marek-andryszczyk/`. Działa tylko przez http, bez HTTPS. Google widzi pustą stronę, a podgląd linku jest pusty. **Do poprawy** — patrz sekcja 9. |
+| `andryszczyk.eu` (OVH) | Strona-wizytówka Marka — repozytorium `marek559/andryszczyk`, GitHub Pages z plikiem `CNAME`. **Do uruchomienia** (sekcja 9): w OVH jest jeszcze przekierowanie-ramka na stary adres, bez HTTPS. |
+| `https://cab-innowacje.com/marek-andryszczyk/` | Stary adres wizytówki. Plik `index.html` przekierowuje na `https://andryszczyk.eu/` (z zachowaniem kotwicy, np. `#rozwiazania`). |
 | `marek559.github.io/CAB/` | Stary adres, przekierowuje na `cab-innowacje.com`. |
 | `wirwicki.eu` | Strona Mateusza, podlinkowana w menu „Zespół”. Nie odpowiada — do sprawdzenia z Mateuszem. |
 
 Adres `https://cab-innowacje.com/` jest wpisany na stałe w polach `canonical`, `og:url`, `og:image`,
-`twitter:image` i w danych JSON-LD trzech stron oraz w `sitemap.xml` i `robots.txt`. Przy zmianie domeny
+`twitter:image` i w danych JSON-LD obu stron CAB oraz w `sitemap.xml` i `robots.txt`. Przy zmianie domeny
 trzeba go podmienić wszędzie (lista jest też w `README.md`).
 
 Zmiany w repozytorium Marek publikuje sam, przez **GitHub Desktop** (commit i push).
@@ -65,11 +69,11 @@ Zmiany w repozytorium Marek publikuje sam, przez **GitHub Desktop** (commit i pu
 |---|---|
 | `index.html` | strona główna CAB |
 | `polityka-prywatnosci.html` | polityka prywatności: tylko kontakt z klientem, bez cookies |
-| `styles.css`, `script.js` | style i skrypt wspólne dla wszystkich stron (menu, „Zespół”, formularz, animacje) |
-| `marek-andryszczyk/` | strona-wizytówka: `index.html`, `profil.css`, zdjęcie, ikony, obrazek podglądu, manifest |
+| `styles.css`, `script.js` | style i skrypt wspólne dla stron CAB (menu, „Zespół”, formularz, animacje) |
+| `marek-andryszczyk/` | tylko `index.html` przekierowujący na https://andryszczyk.eu/ |
 | `assets/` | logo (`logo-cab.png`, `logo-cab-znak.png`), ikony, `og-cab.png`, czcionki w `fonts/` |
 | `site.webmanifest`, `sitemap.xml`, `robots.txt` | opis strony dla przeglądarek i wyszukiwarek |
-| `wizytówka i oferta/` | wizytówki i ulotki A4 do druku (HTML → PDF), oznaczone `noindex` |
+| `wizytówka i oferta/` | wizytówka firmowa i ulotka A4 CAB do druku (HTML → PDF), oznaczone `noindex` |
 | `CAB_materiały/` | materiały źródłowe: brief, teksty, tabele, grafiki, wydruki patentów |
 | `CNAME` | domena GitHub Pages |
 | `logo.png` | oryginalny plik logo od Marka, z błędem „Analiz” — niewykorzystywany |
@@ -88,7 +92,7 @@ Zmiany w repozytorium Marek publikuje sam, przez **GitHub Desktop** (commit i pu
   z zaokrągloną górą, grafiki SVG zamiast zdjęć stockowych.
 - **Logo CAB:** znak „CAB” (czarny + niebieskie „A”) i napis „Centrum Analizy Badań”. W menu jest sam znak,
   w stopce pełne logo.
-- **Logo osobiste „MA.”:** grafitowy kwadrat z białym „MA” i niebieską kropką.
+- **Logo osobiste „MA.”:** grafitowy kwadrat z białym „MA” i niebieską kropką (używane w repozytorium `andryszczyk`).
 
 **Zasady z uwag Marka do materiałów LuMaFi** (obowiązują we wszystkich materiałach):
 - to samo logo wszędzie, w kolorach marki, na tyle duże, żeby było wyraźne;
@@ -110,8 +114,10 @@ Zmiany w repozytorium Marek publikuje sam, przez **GitHub Desktop** (commit i pu
 Na dole stopka z danymi spółki.
 
 **Menu:** O nas · Jak działamy · Obszary · **Zespół** · przycisk „Kontakt”. „Zespół” to rozwijana lista:
-- Marek Andryszczyk → `marek-andryszczyk/`;
-- Mateusz Wirwicki → `https://wirwicki.eu/` (w nowej karcie).
+- Marek Andryszczyk → `https://andryszczyk.eu/`;
+- Mateusz Wirwicki → `https://wirwicki.eu/`.
+
+Oba linki otwierają się w nowej karcie, ze strzałką ↗. Tak samo jest w stopce i w polityce prywatności.
 
 **Kluczowe treści i zasady:**
 - **Hasło:** „Rozwiązujemy problemy technologiczne przedsiębiorstw”.
@@ -124,7 +130,8 @@ Na dole stopka z danymi spółki.
   - **CAB nie posiada patentów.** Twórcą intelektualnym jest Marek, osobiście. CAB nie pośredniczył,
     a prawa należą do firm partnerskich i uczelni.
   - Liczby: 14 zgłoszeń · 7 udzielonych praw · 3 patenty w mocy · 4 wdrożenia przez firmy.
-  - Są też 3 kafelki patentów w mocy z linkami do UPRP i link do pełnej listy na wizytówce Marka.
+  - Są też 3 kafelki patentów w mocy z linkami do UPRP i link do pełnej listy na wizytówce Marka
+    (`https://andryszczyk.eu/#rozwiazania`).
 - **Programy B+R:** SMART/FENG, Bony na innowacje (POIR), Fundusz Badań i Wdrożeń 3.0,
   Kredyt Ekologiczny, FEnIKS, Horyzont 2020 i GEKON. Nie obiecujemy dotacji.
 - **Formularz kontaktowy:**
@@ -136,64 +143,27 @@ Na dole stopka z danymi spółki.
 
 ---
 
-## 6. Strona-wizytówka — `marek-andryszczyk/`
+## 6. Strona-wizytówka Marka — osobne repozytorium
 
-**Zasady (decyzje Marka):**
-- **Bez odniesień:** żadnych wzmianek o CAB i LuMaFi, bez roli w CAB, bez StatPomoc.
-- **Bez publikacji:** nie ma listy artykułów ani ich liczby. Dorobek naukowy jest tylko jako linki:
-  - Google Scholar: https://scholar.google.com/citations?user=M6mWizMAAAAJ&hl=pl
-  - ORCID (publiczny adres): https://orcid.org/0000-0003-2732-8631
-- **Kontakt:** LinkedIn https://www.linkedin.com/in/marek-andryszczyk-11485a90/, telefon i e-mail.
-- **Tekst:** po polsku, w pierwszej osobie. Hero: „Szukam rozwiązań tam, gdzie inni widzą ograniczenia”.
-- **Przy patentach:** podajemy tytuł i branżę, bez nazw firm. Znaczek wdrożenia brzmi „Wdrożony przez firmę”.
-- **Bez LS-DYNA:** wystarczą „analizy MES”.
-- **Zdjęcie:** `marek-andryszczyk.jpg` (3:4) jest tymczasowe, Marek podmieni je na docelowe.
-
-**Układ:**
-1. Hero z liczbami: 3 patenty w mocy · 4 zgłoszenia · ~30 projektów B+R · 4 wdrożenia.
-2. Podejście: 4 zasady.
-3. Projekty: BabyTrack AI; wytrzymałość połączeń szewnych powięzi; biomateriały w modelach ML.
-4. **Współpraca w projektach B+R:**
-   - 9 kafelków z linkami do UPRP;
-   - rozwijane archiwum z 5 pozycjami;
-   - pasek „Moja rola / Obszary projektów / Materiały”.
-5. Kompetencje (4 karty).
-6. O mnie: wykształcenie, złoty medal IWIS 2018, linki Scholar i ORCID.
-7. Kontakt.
-
-**Patenty i wzory** (14 spraw z folderu wydruków UPRP; link: `ewyszukiwarka.pue.uprp.gov.pl/search/pwp-details/<numer>`):
-
-| Numer | Rozwiązanie | Status | Na stronie |
-|---|---|---|---|
-| Pat.245586 (P.436148) | Sposób wytwarzania tlenku diazotu | w mocy, wdrożony | kafelek |
-| Pat.242732 (P.436166) | Sposób wytwarzania tacek aluminiowych | w mocy, wdrożony | kafelek |
-| Pat.247446 (P.444751) | Sposób recyklingu paneli fotowoltaicznych | w mocy | kafelek |
-| P.436224 | Sposób konfekcjonowania folii aluminiowej | decyzja wygaszona, wdrożony | kafelek |
-| P.429838 | Modułowa tektura falista | konwersja na wzór użytkowy, wdrożony | kafelek |
-| P.444943 | Rury do instalacji przeciwpożarowych | w toku | kafelek |
-| P.444978 | Konstrukcje pod panele fotowoltaiczne | w toku | kafelek |
-| P.448147 | Sposób prania wyrobów tekstylnych | oczekuje na badanie | kafelek |
-| W.131325 | Konstrukcja wsporcza mobilnych systemów agro-PV | w toku | kafelek |
-| Pat.234420 (P.421511) | Urządzenie do rehabilitacji stawu promieniowo-nadgarstkowego | wygasł 2023; złoty medal IWIS 2018, Marek pierwszym twórcą | archiwum |
-| Ru.071514 (W.127334) | Nakładka na zamek w drzwiach | wygasł 2021 | archiwum |
-| Ru.071622 (W.127648) | Osłonka termokurczliwa na aparaty słuchowe | wygasł 2021 | archiwum |
-| Ru.071897 (W.127883) | Pudełko do kurczenia osłony na aparaty słuchowe | wygasł 2021 | archiwum |
-| P.436520 | Stolarka okienna i drzwiowa z profili PVC | decyzja wygaszona | archiwum |
-
-Poza stroną zostają, zgodnie z decyzją Marka, dwie odmowy udzielenia prawa: P.436841 (powłoki na szkło kabin
-prysznicowych) i W.126844 (rękawica do rehabilitacji). P.427350 nie jest rozwiązaniem Marka.
+- **Repozytorium:** `marek559/andryszczyk` (lokalnie `Documents\GitHub\andryszczyk`), adres https://andryszczyk.eu/.
+- **Zawartość:** strona (`index.html`, `profil.css`, własne `styles.css` i `script.js` bez części CAB), zdjęcie,
+  ikony, obrazek podglądu, czcionki, osobista wizytówka i oferta A4 do druku z kodem QR.
+- **Zasady treści, układ i pełna tabela 14 patentów i wzorów** są w `README.md` tamtego repozytorium.
+- **Powiązanie z CAB działa w jedną stronę:** CAB linkuje do wizytówki (menu „Zespół”, stopka, link
+  „Pełna lista rozwiązań” w sekcji Doświadczenie), a wizytówka nie wspomina CAB — decyzja Marka.
+- **Stary adres** `cab-innowacje.com/marek-andryszczyk/` przekierowuje na nowy (`marek-andryszczyk/index.html`).
 
 ---
 
 ## 7. Opis strony (SEO i podgląd linków)
 
-Wzorem był pakiet z lumafi.pl. Każda z trzech stron ma:
+Wzorem był pakiet z lumafi.pl. Obie strony CAB mają:
 - `description`, `robots`, `author` i `canonical`;
-- pełne Open Graph i Twitter Card z obrazkami 1200×630:
-  - `assets/og-cab.png`,
-  - `marek-andryszczyk/og-marek-andryszczyk.png`;
-- dane strukturalne JSON-LD: `Organization` (CAB) oraz `ProfilePage` / `Person` (Marek);
+- pełne Open Graph i Twitter Card z obrazkiem 1200×630 `assets/og-cab.png`;
+- dane strukturalne JSON-LD `Organization` (CAB);
 - ikony `favicon.svg`, 32, 180 (Apple), 192 i 512 px oraz `site.webmanifest`.
+
+Wizytówka Marka ma taki sam pakiet (`ProfilePage` / `Person`, własny obrazek podglądu) w swoim repozytorium.
 
 Serwisy społecznościowe przechowują podgląd linku w pamięci. Po zmianach odśwież go
 w **LinkedIn Post Inspector** i **Facebook Sharing Debugger**.
@@ -206,20 +176,19 @@ w **LinkedIn Post Inspector** i **Facebook Sharing Debugger**.
 |---|---|
 | `wizytowka-cab.html` | Wizytówka firmowa CAB, 90×50 mm, spad 3 mm, znaczniki cięcia (arkusz 106×66 mm). Przód: pełne logo CAB, hasło, `cab-innowacje.com`. Tył: pełna nazwa spółki, Marek (mgr inż. · Członek Zarządu), telefon, e-mail, oba adresy stron; po prawej znak CAB wyśrodkowany nad **kodem QR z vCard** (zapis kontaktu); niebieski pas 10 mm z adresem oraz NIP i KRS, tekst wyśrodkowany w pionie. |
 | `oferta-cab.html` | Ulotka A4 do maila — szybki przegląd firmy: 5 obszarów + 5 usług, sposób pracy, programy B+R, kontakt i dane spółki. Patenty z przypisem „dorobek zespołu”. Linki w PDF są klikalne. |
-| `wizytowka-osobista.html` | Wizytówka osobista „MA.”: hasło; na tyle podpis „Badania materiałów i biomechanika / Patenty · Dane i AI · Projekty B+R”, telefon, e-mail, `andryszczyk.eu` i **kod QR z vCard** (dane kontaktowe, bez firmy). Bez ORCID, LinkedIn i znaku „MA.” na tyle — decyzje Marka. |
-| `oferta-osobista.html` | Osobista oferta A4 („MA.”), wersja zapasowa. |
-| `podglad.html` | Wszystkie cztery projekty na jednej stronie. |
-| `druk.css`, `luki.js` | Wspólne style; skrypt rysuje półokręgi dookoła kropki logo lub wierzchołka „A”. |
+| `podglad.html` | Oba projekty CAB na jednej stronie. |
+| `druk.css`, `luki.js` | Style druku; skrypt rysuje półokręgi dookoła wierzchołka niebieskiego „A”. |
 | `cab-logo.png`, `cab-znak.png` | Logo CAB w wysokiej rozdzielczości (bez tła). |
-| `_qr.py`, `qr-*.svg` | Generator kodów QR (biblioteka `segno`) i gotowe kody: `qr-vcard-cab.svg`, `qr-vcard-osobista.svg`. |
+| `_qr.py`, `qr-vcard-cab.svg` | Generator kodu QR (biblioteka `segno`) i gotowy kod. |
+
+Osobista wizytówka „MA.” i osobista oferta A4 są w repozytorium `andryszczyk` (folder `wizytówka i oferta/`).
 
 **Zapis do PDF:** otwórz plik w Chrome → Ctrl+P → „Zapisz jako PDF” → marginesy: **Brak**,
 zaznacz **Grafika tła**. Wizytówka daje 2 strony (przód i tył), ulotka 1 stronę A4.
 Na ekranie przerywana linia pokazuje linię cięcia, a spad poza nią jest przygaszony — na wydruku ich nie ma.
 
-**Kody QR:** oba to vCard w wersji 8 (20 mm, ok. 0,41 mm na moduł). Oba odczytują się z wydruku 300 i 200 dpi.
-Kod osobisty ma adres `http://andryszczyk.eu`, bo https tej domeny jeszcze nie działa. Po zmianie telefonu,
-e-maila lub adresu uruchom `python _qr.py` w tym folderze.
+**Kod QR:** vCard w wersji 8 (20 mm, ok. 0,41 mm na moduł), odczytuje się z wydruku 300 i 200 dpi.
+Po zmianie telefonu, e-maila lub adresu uruchom `python _qr.py` w tym folderze.
 
 **Do drukarni:** papier od 350 g, mat, lakier wybiórczy na logo. Niebieski `#2E5BFF` w CMYK wyjdzie ciemniejszy,
 więc poproś o proof albo druk z Pantone 2728 C.
@@ -229,13 +198,16 @@ więc poproś o proof albo druk z Pantone 2728 C.
 ## 9. Otwarte sprawy (do zrobienia)
 
 1. **E-mail w domenie:** Marek założy pocztę i poda adres. Wtedy podmień go w:
-   - `index.html`, `polityka-prywatnosci.html`, `marek-andryszczyk/index.html` (także JSON-LD);
+   - `index.html`, `polityka-prywatnosci.html` (także JSON-LD);
    - `CONTACT_EMAIL` w `script.js`;
    - wszystkich plikach w `wizytówka i oferta/`, a potem przegeneruj `_qr.py`;
+   - repozytorium `andryszczyk` (lista w jego `README.md`);
    - nocie biograficznej i dokumencie LinkedIn.
-2. **andryszczyk.eu:** najlepiej przenieść wizytówkę do osobnego repozytorium z własnym `CNAME`
-   (andryszczyk.eu), bo wtedy adres nie zawiera „CAB” i działa HTTPS. Prostsza opcja to przekierowanie
-   „widoczne 301” w panelu OVH zamiast ramki.
+2. **Uruchomienie andryszczyk.eu:** pliki są już w repozytorium `andryszczyk` (24.09.2026). Kolejność:
+   - push repozytorium `andryszczyk`, włączenie GitHub Pages, DNS w OVH, *Enforce HTTPS* (instrukcja
+     w jego `README.md`);
+   - **dopiero gdy https://andryszczyk.eu/ działa** — push zmian w CAB (przekierowanie w `marek-andryszczyk/`
+     i nowe linki). Wcześniej przekierowanie trafiłoby na niedziałający adres.
 3. **Formspree:** wpisz adres formularza w `FORM_ENDPOINT` i dopisz Formspree w punkcie 3 polityki prywatności.
 4. **Kapitał zakładowy:** zostaje ze względu na art. 206 KSH, chyba że Marek zdecyduje inaczej.
 5. **wirwicki.eu nie działa:** ustalić z Mateuszem albo tymczasowo zmienić link w „Zespół”.
@@ -244,7 +216,8 @@ więc poproś o proof albo druk z Pantone 2728 C.
    „Witryna” i „Wyróżnione”. Jeśli zmienisz adres profilu LinkedIn, podmień link na wizytówce.
 7. **Zdjęcie docelowe** na wizytówkę (3:4) i ewentualnie zdjęcie zespołu na ulotkę (za zgodą Mateusza).
 8. **Logo w wersji wektorowej** (SVG lub PDF) dla drukarni i większych formatów.
-9. **Co kwartał** sprawdź statusy zgłoszeń w UPRP (KAPEO, MEDWASH, PV Technologie) i zaktualizuj kafelki.
+9. **Co kwartał** sprawdź statusy zgłoszeń w UPRP (KAPEO, MEDWASH, PV Technologie) i zaktualizuj kafelki
+   na andryszczyk.eu oraz liczby i kafelki w sekcji Doświadczenie CAB.
 10. **Po obronie doktoratu (2027):** zmień „mgr inż.” na „dr inż.” na stronach, wizytówkach, w BIO i na LinkedIn.
 11. **Plan rozwoju w internecie** (Google, SEO, marka) jest w osobnym planie HTML.
 

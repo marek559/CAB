@@ -1,4 +1,5 @@
-# Generuje kody QR (SVG) do wizytówek. Uruchom ponownie po zmianie danych kontaktowych.
+# Generuje kod QR (SVG) do wizytówki firmowej CAB. Uruchom ponownie po zmianie danych kontaktowych.
+# Kod wizytówki osobistej jest w repozytorium andryszczyk.
 # Wymaga: pip install segno
 import pathlib
 
@@ -22,15 +23,6 @@ codes = {
         "TEL:+48609222466",
         "EMAIL:andryszczyk.marek@gmail.com",
         "URL:https://cab-innowacje.com",
-    ),
-    # wizytówka osobista — bez danych firmy; http, bo andryszczyk.eu nie ma jeszcze HTTPS
-    "qr-vcard-osobista.svg": vcard(
-        "N:Andryszczyk;Marek",
-        "FN:Marek Andryszczyk",
-        "TITLE:Badacz i wynalazca",
-        "TEL:+48609222466",
-        "EMAIL:andryszczyk.marek@gmail.com",
-        "URL:http://andryszczyk.eu",
     ),
 }
 

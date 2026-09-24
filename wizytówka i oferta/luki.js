@@ -1,5 +1,5 @@
-/* Rysuje koncentryczne półokręgi, których środkiem jest kropka w logo „MA.”.
-   Pozycja kropki jest mierzona w przeglądarce, więc okręgi zawsze trafiają w nią dokładnie. */
+/* Rysuje koncentryczne półokręgi, których środkiem jest wierzchołek niebieskiego „A” w logo CAB.
+   Pozycja punktu jest mierzona w przeglądarce, więc okręgi zawsze trafiają w niego dokładnie. */
 function drawArcs(boxSel, dotSel, opt) {
   var MM = 96 / 25.4;
   var box = document.querySelector(boxSel);
