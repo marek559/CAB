@@ -126,6 +126,16 @@ ul, ol { list-style: none; }
     color: var(--slate);
   }
   .howto strong { color: var(--ink); }
+  /* linia cięcia i przygaszony spad — widać gotową wizytówkę po przycięciu */
+  .sheet .bleed::after {
+    content: "";
+    position: absolute;
+    inset: 3mm;
+    z-index: 10;
+    pointer-events: none;
+    outline: 0.25mm dashed rgba(11, 13, 18, 0.35);
+    box-shadow: 0 0 0 6mm rgba(255, 255, 255, 0.62);
+  }
   .todo { background: #FFF3B0; box-shadow: 0 0 0 0.6mm #FFF3B0; border-radius: 0.6mm; color: var(--ink) !important; }
 }
 @media print {

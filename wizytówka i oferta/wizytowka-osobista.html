@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>Marek Andryszczyk — wizytówka osobista (naukowa)</title>
+  <title>Marek Andryszczyk — wizytówka osobista</title>
   <link rel="stylesheet" href="druk.css" />
   <style>
     /* Arkusz 106 × 66 mm = wizytówka 90 × 50 mm + 3 mm spadu + pole na znaczniki cięcia */
@@ -51,12 +51,12 @@
     .front .foot__tag { font-family: var(--f-mono); font-size: 6.5pt; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
     .front .foot__www { font-family: var(--f-head); font-weight: 600; font-size: 9pt; }
 
-    /* ---------- TYŁ: osoba, kontakt, profile naukowe ---------- */
+    /* ---------- TYŁ: osoba, kontakt, kod QR z vCard ---------- */
     .back .bleed { background: #fff; }
     .back .eyebrow {
       position: absolute;
       left: 5mm;
-      top: 5.4mm;
+      top: 5mm;
       display: flex;
       align-items: center;
       gap: 2.5mm;
@@ -67,29 +67,23 @@
       text-transform: uppercase;
       color: var(--blue);
     }
-    .back .eyebrow::after { content: ""; width: 8mm; height: 0.3mm; background: var(--blue); }
-    .back .logo__mark { position: absolute; right: 5mm; top: 4.4mm; width: 8mm; height: 8mm; border-radius: 2.1mm; font-size: 10.5pt; }
-    .back .who { position: absolute; left: 5mm; top: 11.6mm; }
-    .back .who h1 { font-family: var(--f-head); font-weight: 700; font-size: 15.5pt; letter-spacing: -0.035em; line-height: 1.05; }
-    .back .who p { margin-top: 1.2mm; font-family: var(--f-mono); font-size: 6.6pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .back .contact { position: absolute; left: 5mm; top: 22.4mm; display: grid; row-gap: 0.8mm; }
-    .back .contact p { white-space: nowrap; font-family: var(--f-head); font-weight: 600; font-size: 8.4pt; color: var(--ink); }
+    .back .eyebrow::after { content: ""; width: 12mm; height: 0.3mm; background: var(--blue); }
+    .back .who { position: absolute; left: 5mm; top: 12.4mm; }
+    .back .who h1 { font-family: var(--f-head); font-weight: 700; font-size: 16pt; letter-spacing: -0.035em; line-height: 1.05; }
+    .back .who p { margin-top: 1.8mm; font-family: var(--f-mono); font-size: 6.6pt; line-height: 1.5; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .back .contact { position: absolute; left: 5mm; top: 28.4mm; display: grid; row-gap: 1.3mm; }
+    .back .contact p { white-space: nowrap; font-family: var(--f-head); font-weight: 600; font-size: 8.4pt; line-height: 1.25; color: var(--ink); }
     .back .contact .blue { color: var(--blue); font-weight: 700; }
-    /* profile naukowe */
-    .back .profiles { position: absolute; left: 5mm; top: 35mm; display: grid; row-gap: 0.7mm; margin: 0; padding-top: 1.6mm; border-top: 0.3mm solid var(--line); }
-    .back .profiles div { display: flex; align-items: baseline; gap: 2mm; white-space: nowrap; }
-    .back .profiles dt { width: 12mm; font-family: var(--f-mono); font-weight: 500; font-size: 6pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey); }
-    .back .profiles dd { margin: 0; font-size: 7.4pt; font-weight: 700; color: var(--ink); }
-    /* kod QR do profilu Google Scholar */
-    .back .qr { position: absolute; right: 5mm; top: 16.2mm; width: 17mm; margin: 0; text-align: center; }
-    .back .qr img { display: block; width: 17mm; height: 17mm; }
-    .back .qr figcaption { margin-top: 1.1mm; font-family: var(--f-mono); font-weight: 500; font-size: 5.8pt; letter-spacing: 0; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    /* kod QR z vCard — po zeskanowaniu telefon zapisuje kontakt */
+    .back .qr { position: absolute; right: 5mm; top: 14.6mm; width: 20mm; margin: 0; text-align: center; }
+    .back .qr img { display: block; width: 20mm; height: 20mm; }
+    .back .qr figcaption { margin-top: 1.2mm; font-family: var(--f-mono); font-weight: 500; font-size: 5.8pt; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
   </style>
 </head>
 <body>
   <div class="howto">
     <strong>Wizytówka 90 × 50 mm, spad 3 mm, znaczniki cięcia.</strong> Do druku: Ctrl+P → „Zapisz jako PDF”,
-    marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>. Plik PDF ma dwie strony: przód i tył.
+    marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>. Plik PDF ma dwie strony: przód i tył. Przerywana linia to linia cięcia — przygaszony pas poza nią to spad, który drukarnia odetnie (na wydruku linii nie ma).
    
   </div>
 
@@ -120,23 +114,18 @@
     <div class="bleed">
       <div class="trim">
         <p class="eyebrow">mgr inż. · badacz i wynalazca</p>
-        <span class="logo__mark" aria-hidden="true"><b>MA<i class="dot"></i></b></span>
         <div class="who">
           <h1>Marek Andryszczyk</h1>
-          <p>Biomechanika · Dane i AI · B+R</p>
+          <p>Badania materiałów i biomechanika<br />Patenty · Dane i AI · Projekty B+R</p>
         </div>
         <div class="contact">
           <p class="blue">+48 609 222 466</p>
           <p>andryszczyk.marek@gmail.com</p>
           <p class="blue">andryszczyk.eu</p>
         </div>
-        <dl class="profiles">
-          <div><dt>ORCID</dt><dd>0000-0003-2732-8631</dd></div>
-          <div><dt>LinkedIn</dt><dd>in/marek-andryszczyk-11485a90</dd></div>
-        </dl>
         <figure class="qr">
-          <img src="qr-scholar.svg" alt="Kod QR — profil Google Scholar" />
-          <figcaption>Google Scholar</figcaption>
+          <img src="qr-vcard-osobista.svg" alt="Kod QR — zapisz kontakt" />
+          <figcaption>Zapisz kontakt</figcaption>
         </figure>
       </div>
     </div>

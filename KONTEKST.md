@@ -204,20 +204,22 @@ w **LinkedIn Post Inspector** i **Facebook Sharing Debugger**.
 
 | Plik | Co to jest |
 |---|---|
-| `wizytowka-cab.html` | Wizytówka firmowa CAB, 90×50 mm, spad 3 mm, znaczniki cięcia (arkusz 106×66 mm). Przód: pełne logo CAB, hasło, `cab-innowacje.com`. Tył: pełna nazwa spółki, Marek (mgr inż. · Członek Zarządu), telefon, e-mail, oba adresy stron, **kod QR z vCard** (zapis kontaktu), niebieski pas z adresem oraz NIP i KRS. |
+| `wizytowka-cab.html` | Wizytówka firmowa CAB, 90×50 mm, spad 3 mm, znaczniki cięcia (arkusz 106×66 mm). Przód: pełne logo CAB, hasło, `cab-innowacje.com`. Tył: pełna nazwa spółki, Marek (mgr inż. · Członek Zarządu), telefon, e-mail, oba adresy stron; po prawej znak CAB wyśrodkowany nad **kodem QR z vCard** (zapis kontaktu); niebieski pas 10 mm z adresem oraz NIP i KRS, tekst wyśrodkowany w pionie. |
 | `oferta-cab.html` | Ulotka A4 do maila — szybki przegląd firmy: 5 obszarów + 5 usług, sposób pracy, programy B+R, kontakt i dane spółki. Patenty z przypisem „dorobek zespołu”. Linki w PDF są klikalne. |
-| `wizytowka-osobista.html` | Wizytówka osobista „MA.” (naukowa): hasło, telefon, e-mail, `andryszczyk.eu`, ORCID, LinkedIn, **kod QR do Google Scholar**. |
+| `wizytowka-osobista.html` | Wizytówka osobista „MA.”: hasło; na tyle podpis „Badania materiałów i biomechanika / Patenty · Dane i AI · Projekty B+R”, telefon, e-mail, `andryszczyk.eu` i **kod QR z vCard** (dane kontaktowe, bez firmy). Bez ORCID, LinkedIn i znaku „MA.” na tyle — decyzje Marka. |
 | `oferta-osobista.html` | Osobista oferta A4 („MA.”), wersja zapasowa. |
 | `podglad.html` | Wszystkie cztery projekty na jednej stronie. |
 | `druk.css`, `luki.js` | Wspólne style; skrypt rysuje półokręgi dookoła kropki logo lub wierzchołka „A”. |
 | `cab-logo.png`, `cab-znak.png` | Logo CAB w wysokiej rozdzielczości (bez tła). |
-| `_qr.py`, `qr-*.svg` | Generator kodów QR (biblioteka `segno`) i gotowe kody. |
+| `_qr.py`, `qr-*.svg` | Generator kodów QR (biblioteka `segno`) i gotowe kody: `qr-vcard-cab.svg`, `qr-vcard-osobista.svg`. |
 
 **Zapis do PDF:** otwórz plik w Chrome → Ctrl+P → „Zapisz jako PDF” → marginesy: **Brak**,
 zaznacz **Grafika tła**. Wizytówka daje 2 strony (przód i tył), ulotka 1 stronę A4.
+Na ekranie przerywana linia pokazuje linię cięcia, a spad poza nią jest przygaszony — na wydruku ich nie ma.
 
-**Kody QR:** vCard ma wersję 8 (20 mm, ok. 0,41 mm na moduł), a Scholar wersję 4. Oba odczytują się
-z wydruku 300 i 200 dpi. Po zmianie telefonu lub e-maila uruchom `python _qr.py` w tym folderze.
+**Kody QR:** oba to vCard w wersji 8 (20 mm, ok. 0,41 mm na moduł). Oba odczytują się z wydruku 300 i 200 dpi.
+Kod osobisty ma adres `http://andryszczyk.eu`, bo https tej domeny jeszcze nie działa. Po zmianie telefonu,
+e-maila lub adresu uruchom `python _qr.py` w tym folderze.
 
 **Do drukarni:** papier od 350 g, mat, lakier wybiórczy na logo. Niebieski `#2E5BFF` w CMYK wyjdzie ciemniejszy,
 więc poproś o proof albo druk z Pantone 2728 C.

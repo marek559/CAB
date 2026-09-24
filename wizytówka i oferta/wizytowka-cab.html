@@ -50,36 +50,37 @@
     .back .eyebrow {
       position: absolute;
       left: 5mm;
-      top: 5.2mm;
+      top: 5mm;
       font-family: var(--f-mono);
       font-weight: 500;
-      font-size: 6.6pt;
+      font-size: 6.4pt;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--blue);
     }
-    .back .cab-logo { position: absolute; right: 5mm; top: 4.4mm; height: 5.4mm; }
-    .back .who { position: absolute; left: 5mm; top: 11.8mm; }
-    .back .who h1 { font-family: var(--f-head); font-weight: 700; font-size: 15.5pt; letter-spacing: -0.035em; line-height: 1.05; }
-    .back .who p { margin-top: 1.3mm; font-family: var(--f-mono); font-size: 6.8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .back .contact { position: absolute; left: 5mm; top: 22.2mm; display: grid; row-gap: 0.9mm; }
-    .back .contact p { white-space: nowrap; font-family: var(--f-head); font-weight: 600; font-size: 8.4pt; color: var(--ink); }
+    .back .who { position: absolute; left: 5mm; top: 11mm; }
+    .back .who h1 { font-family: var(--f-head); font-weight: 700; font-size: 15pt; letter-spacing: -0.035em; line-height: 1.05; }
+    .back .who p { margin-top: 1.7mm; font-family: var(--f-mono); font-size: 6.6pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .back .contact { position: absolute; left: 5mm; top: 24.2mm; display: grid; row-gap: 1.1mm; }
+    .back .contact p { white-space: nowrap; font-family: var(--f-head); font-weight: 600; font-size: 8pt; line-height: 1.2; color: var(--ink); }
     .back .contact .blue { color: var(--blue); font-weight: 700; }
     .back .contact .sep { margin: 0 1.4mm; color: var(--grey); font-weight: 400; }
-    /* kod QR z vCard — po zeskanowaniu telefon zapisuje kontakt */
-    .back .qr { position: absolute; right: 5mm; top: 11.8mm; width: 20mm; margin: 0; text-align: center; }
+    /* prawa kolumna: znak CAB wyśrodkowany nad kodem QR (vCard — zapis kontaktu) */
+    .back .side { position: absolute; right: 5mm; top: 4.6mm; width: 20mm; display: flex; flex-direction: column; align-items: center; }
+    .back .side .cab-logo { height: 5.4mm; }
+    .back .qr { margin: 2.4mm 0 0; text-align: center; }
     .back .qr img { display: block; width: 20mm; height: 20mm; }
-    .back .qr figcaption { margin-top: 1.1mm; font-family: var(--f-mono); font-weight: 500; font-size: 5.8pt; letter-spacing: 0; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-    /* niebieski pas z danymi spółki — sięga do krawędzi spadu */
+    .back .qr figcaption { margin-top: 1.1mm; font-family: var(--f-mono); font-weight: 500; font-size: 5.8pt; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    /* niebieski pas z danymi spółki: 10 mm widoczne po przycięciu + 3 mm spadu */
     .back .company {
       position: absolute;
       left: -3mm;
       right: -3mm;
       bottom: -3mm;
-      height: 15.4mm;
+      height: 13mm;
       background: var(--blue);
     }
-    /* treść wyśrodkowana w widocznej części pasa (bez 3 mm spadu) */
+    /* tekst wyśrodkowany w pionie w widocznej części pasa (bez spadu) */
     .back .company__in {
       position: absolute;
       left: 8mm;
@@ -89,9 +90,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 6.9pt;
+      font-size: 6.6pt;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.35;
       color: #fff;
     }
     .back .company__in .r { text-align: right; }
@@ -100,7 +101,7 @@
 <body>
   <div class="howto">
     <strong>Wizytówka firmowa CAB — 90 × 50 mm, spad 3 mm, znaczniki cięcia.</strong> Do druku: Ctrl+P →
-    „Zapisz jako PDF”, marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>. PDF ma dwie strony: przód i tył.
+    „Zapisz jako PDF”, marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>. PDF ma dwie strony: przód i tył. Przerywana linia to linia cięcia — przygaszony pas poza nią to spad, który drukarnia odetnie (na wydruku linii nie ma).
   </div>
 
   <!-- ===================== PRZÓD ===================== -->
@@ -130,7 +131,6 @@
     <div class="bleed">
       <div class="trim">
         <p class="eyebrow">CAB Centrum Analizy Badań sp. z o.o.</p>
-        <span class="cab-logo cab-logo--mark" aria-hidden="true"><img src="cab-znak.png" alt="" /></span>
         <div class="who">
           <h1>Marek Andryszczyk</h1>
           <p>mgr inż. · Członek Zarządu</p>
@@ -140,10 +140,13 @@
           <p>andryszczyk.marek@gmail.com</p>
           <p><span class="blue">cab-innowacje.com</span><span class="sep">·</span>andryszczyk.eu</p>
         </div>
-        <figure class="qr">
-          <img src="qr-vcard-cab.svg" alt="Kod QR — zapisz kontakt" />
-          <figcaption>Zapisz kontakt</figcaption>
-        </figure>
+        <div class="side">
+          <span class="cab-logo cab-logo--mark" aria-hidden="true"><img src="cab-znak.png" alt="" /></span>
+          <figure class="qr">
+            <img src="qr-vcard-cab.svg" alt="Kod QR — zapisz kontakt" />
+            <figcaption>Zapisz kontakt</figcaption>
+          </figure>
+        </div>
         <div class="company">
           <div class="company__in">
             <span>ul. Romualda Traugutta 11 lok. 1<br />85-122 Bydgoszcz</span>
