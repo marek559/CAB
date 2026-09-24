@@ -8,6 +8,10 @@ Strona-wizytówka Marka i jego osobista wizytówka do druku mają od 24.09.2026 
 `marek559/andryszczyk` (adres https://andryszczyk.eu/). Ich kontekst, zasady treści i tabela patentów
 są w `README.md` tamtego repozytorium.
 
+**Kopie zapasowe w tym repozytorium:** `KONTEKST.md` (decyzje i kontekst), `README.md` (technika, DNS,
+odtworzenie strony) i `TRESC.md` (pełne teksty strony i materiałów do druku). Plan dalszej pracy dla obu stron
+jest w osobnym planie HTML (sekcja 9).
+
 > Plik leży w publicznym repozytorium i jest dostępny także pod adresem strony
 > (`cab-innowacje.com/KONTEKST.md`). Nie wpisuj tu danych poufnych: PESEL, adresu domowego,
 > haseł ani notatek wewnętrznych.
@@ -33,8 +37,8 @@ są w `README.md` tamtego repozytorium.
 Pełny skład zarządu i wspólników jest w odpisie KRS. Celowo nie przepisujemy go tutaj, bo ten plik jest
 publiczny, a na stronie nie eksponujemy funkcji ani udziałów (uwaga z recenzji Mateusza).
 
-**Nazwa:** poprawna jest nazwa z KRS, czyli „Centrum **Analizy** Badań”. Pierwotny plik `logo.png` miał błąd
-„Analiz”; poprawione logo jest w `CAB_materiały/04_grafiki/logo-cab-poprawione.png`.
+**Nazwa:** poprawna jest nazwa z KRS, czyli „Centrum **Analizy** Badań”. Pierwotny plik logo miał błąd
+„Analiz”. Poprawione logo jest w `assets/logo-cab.png` (strona) i `wizytówka i oferta/cab-logo.png` (druk).
 
 **Na stronie celowo nie podajemy** struktury udziałów ani funkcji w zarządzie. Zespół opisujemy ogólnie:
 spin-off, współpraca z politechnikami, uniwersytetami i instytutami.
@@ -50,10 +54,20 @@ Dziś jest tylko w stopce.
 | Adres | Stan (24.09.2026) |
 |---|---|
 | `https://cab-innowacje.com/` | Strona CAB. GitHub Pages z repozytorium `marek559/CAB`, plik `CNAME`. HTTPS działa, http przekierowuje na https, rekord `www` wskazuje na `marek559.github.io`. |
-| `andryszczyk.eu` (OVH) | Strona-wizytówka Marka — repozytorium `marek559/andryszczyk`, GitHub Pages z plikiem `CNAME`. **Do uruchomienia** (sekcja 9): w OVH jest jeszcze przekierowanie-ramka na stary adres, bez HTTPS. |
+| `https://andryszczyk.eu/` (OVH) | Strona-wizytówka Marka — repozytorium `marek559/andryszczyk`, GitHub Pages z plikiem `CNAME`. Działa od 24.09.2026: HTTPS, `http` i `www` przekierowują na `https://andryszczyk.eu/`. |
 | `https://cab-innowacje.com/marek-andryszczyk/` | Stary adres wizytówki. Plik `index.html` przekierowuje na `https://andryszczyk.eu/` (z zachowaniem kotwicy, np. `#rozwiazania`). |
 | `marek559.github.io/CAB/` | Stary adres, przekierowuje na `cab-innowacje.com`. |
-| `wirwicki.eu` | Strona Mateusza, podlinkowana w menu „Zespół”. Nie odpowiada — do sprawdzenia z Mateuszem. |
+| `wirwicki.eu` | Strona Mateusza, podlinkowana w menu „Zespół”. 24.09.2026 nadal nie odpowiada — do sprawdzenia z Mateuszem. |
+
+**DNS w OVH (stan 24.09.2026, obie domeny mają strefę DNS w OVH):**
+
+| Domena | Rekordy strony | Poczta |
+|---|---|---|
+| `cab-innowacje.com` | 4× A: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; CNAME `www` → `marek559.github.io` | MX `mx1/mx2/mx3.mail.ovh.net`, SPF `v=spf1 include:mx.ovh.com -all` |
+| `andryszczyk.eu` | te same 4× A i CNAME `www` → `marek559.github.io` | MX `mx1/mx2/mx3.mail.ovh.net`, SPF `v=spf1 include:mx.ovh.com -all` |
+
+W strefie `cab-innowacje.com` zostały dwa zbędne rekordy TXT po dawnym przekierowaniu OVH: `"3|welcome"`
+i `"1|www.cab-innowacje.com"`. Nie szkodzą, ale można je usunąć.
 
 Adres `https://cab-innowacje.com/` jest wpisany na stałe w polach `canonical`, `og:url`, `og:image`,
 `twitter:image` i w danych JSON-LD obu stron CAB oraz w `sitemap.xml` i `robots.txt`. Przy zmianie domeny
@@ -74,10 +88,16 @@ Zmiany w repozytorium Marek publikuje sam, przez **GitHub Desktop** (commit i pu
 | `assets/` | logo (`logo-cab.png`, `logo-cab-znak.png`), ikony, `og-cab.png`, czcionki w `fonts/` |
 | `site.webmanifest`, `sitemap.xml`, `robots.txt` | opis strony dla przeglądarek i wyszukiwarek |
 | `wizytówka i oferta/` | wizytówka firmowa i ulotka A4 CAB do druku (HTML → PDF), oznaczone `noindex` |
-| `CAB_materiały/` | materiały źródłowe: brief, teksty, tabele, grafiki, wydruki patentów |
 | `CNAME` | domena GitHub Pages |
-| `logo.png` | oryginalny plik logo od Marka, z błędem „Analiz” — niewykorzystywany |
-| `README.md` | opis techniczny strony |
+| `README.md` | opis techniczny strony, DNS i odtworzenie strony z kopii |
+| `TRESC.md` | kopia zapasowa pełnych tekstów strony i materiałów do druku |
+| `.claude/launch.json` | podgląd lokalny dla Claude Code (CAB na porcie 8000, wizytówka Marka na 8001) |
+
+**Usunięte 24.09.2026** (nie były używane przez stronę, a leżały publicznie pod adresem strony):
+`CAB_materiały/` (brief, prompty, pierwsze teksty, tabele, grafiki, wydruki patentów), oryginalne `logo.png`
+z błędem „Analiz” i nieużywane grafiki `assets/img/`. Kopia jest lokalnie w
+`Documents\CAB — archiwum materiałów strony\` oraz w historii Git. **Brief i pierwsze teksty podają błędny
+podział udziałów i funkcję prezesa, niezgodny z KRS — nie publikuj ich ponownie.**
 
 ---
 
@@ -203,11 +223,7 @@ więc poproś o proof albo druk z Pantone 2728 C.
    - wszystkich plikach w `wizytówka i oferta/`, a potem przegeneruj `_qr.py`;
    - repozytorium `andryszczyk` (lista w jego `README.md`);
    - nocie biograficznej i dokumencie LinkedIn.
-2. **Uruchomienie andryszczyk.eu:** pliki są już w repozytorium `andryszczyk` (24.09.2026). Kolejność:
-   - push repozytorium `andryszczyk`, włączenie GitHub Pages, DNS w OVH, *Enforce HTTPS* (instrukcja
-     w jego `README.md`);
-   - **dopiero gdy https://andryszczyk.eu/ działa** — push zmian w CAB (przekierowanie w `marek-andryszczyk/`
-     i nowe linki). Wcześniej przekierowanie trafiłoby na niedziałający adres.
+2. **Google Search Console i Profil Firmy w Google** dla obu domen — kroki w planie HTML.
 3. **Formspree:** wpisz adres formularza w `FORM_ENDPOINT` i dopisz Formspree w punkcie 3 polityki prywatności.
 4. **Kapitał zakładowy:** zostaje ze względu na art. 206 KSH, chyba że Marek zdecyduje inaczej.
 5. **wirwicki.eu nie działa:** ustalić z Mateuszem albo tymczasowo zmienić link w „Zespół”.
@@ -219,13 +235,16 @@ więc poproś o proof albo druk z Pantone 2728 C.
 9. **Co kwartał** sprawdź statusy zgłoszeń w UPRP (KAPEO, MEDWASH, PV Technologie) i zaktualizuj kafelki
    na andryszczyk.eu oraz liczby i kafelki w sekcji Doświadczenie CAB.
 10. **Po obronie doktoratu (2027):** zmień „mgr inż.” na „dr inż.” na stronach, wizytówkach, w BIO i na LinkedIn.
-11. **Plan rozwoju w internecie** (Google, SEO, marka) jest w osobnym planie HTML.
+11. **Plan dalszej pracy** dla cab-innowacje.com i andryszczyk.eu (Google, SEO, poczta w domenie, marka) jest
+    w planie HTML: https://claude.ai/artifact/2bAjZmNGnryRkRLED8cdcv
+12. **Porządek w DNS:** usuń w strefie `cab-innowacje.com` zbędne rekordy TXT `"3|welcome"` i `"1|www.cab-innowacje.com"`.
 
 ---
 
 ## 10. Źródła materiałów
 
-- **Brief i teksty strony:** `CAB_materiały/` (prompt v2 jest nadrzędny nad v1).
+- **Brief i pierwsze teksty strony:** `Documents\CAB — archiwum materiałów strony\CAB_materiały\` (poza repozytorium;
+  zawierają nieaktualne dane o udziałach). Aktualne teksty: `TRESC.md`.
 - **Recenzja strony od Mateusza** (zrzuty z uwagami): `Downloads\recenzja strony CAB\`.
 - **Wydruki patentów, BIO, profil LinkedIn i zdjęcia:** `Desktop\materiały do BIO i Likedin\`.
 - **Wzory LuMaFi z uwagami Marka:** `Downloads\LUMAFI — wizytówka do druku.pdf`,
