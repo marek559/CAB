@@ -19,6 +19,7 @@ Manrope, JetBrains Mono (pliki w `assets/fonts`, bez Google Fonts).
 | `site.webmanifest`, `sitemap.xml`, `robots.txt` | opis strony dla przeglądarek i wyszukiwarek |
 | `CAB_materiały/` | materiały źródłowe (brief, teksty, grafiki, wydruki patentów) |
 | `wizytówka i oferta/` | wizytówki i ulotki A4 do druku (HTML → PDF), niewidoczne dla wyszukiwarek |
+| `KONTEKST.md` | pełny kontekst projektu: dane spółki, decyzje, zasady marki, patenty, otwarte sprawy |
 
 ## Formularz kontaktowy
 
