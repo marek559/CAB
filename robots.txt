@@ -1,0 +1,6 @@
+# robots.txt — CAB Centrum Analizy Badań
+# Działa dopiero pod własną domeną (roboty czytają robots.txt tylko z głównego katalogu domeny).
+User-agent: *
+Allow: /
+
+Sitemap: https://marek559.github.io/CAB/sitemap.xml

@@ -1,0 +1,14 @@
+{
+  "name": "CAB Centrum Analizy Badań",
+  "short_name": "CAB",
+  "description": "Partner technologiczny przedsiębiorstw: diagnoza, badania, projekty B+R i wdrożenia.",
+  "lang": "pl",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#2E5BFF",
+  "icons": [
+    { "src": "assets/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
