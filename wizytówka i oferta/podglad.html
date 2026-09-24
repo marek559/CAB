@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Wizytówki i ulotki — podgląd</title>
+  <link rel="stylesheet" href="druk.css" />
+  <style>
+    body { padding: 12mm 0 20mm !important; }
+    .wrap { max-width: 250mm; margin: 0 auto; padding: 0 8mm; }
+    h1 { font-family: var(--f-head); font-size: 20pt; letter-spacing: -0.03em; }
+    .intro { margin-top: 2mm; font-size: 10.5pt; color: var(--slate); line-height: 1.6; }
+    .intro a { color: var(--blue); font-weight: 700; }
+    h2 { margin: 10mm 0 3mm; font-family: var(--f-head); font-size: 14pt; letter-spacing: -0.02em; }
+    h3 { margin: 6mm 0 2.5mm; font-family: var(--f-mono); font-weight: 500; font-size: 8.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); }
+    iframe { display: block; width: 100%; border: 0; border-radius: 3mm; background: #E6E9F0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Wizytówki i ulotki — podgląd</h1>
+    <p class="intro">
+      Pliki do druku: <a href="wizytowka-cab.html">wizytowka-cab.html</a>, <a href="oferta-cab.html">oferta-cab.html</a>,
+      <a href="wizytowka-osobista.html">wizytowka-osobista.html</a>, <a href="oferta-osobista.html">oferta-osobista.html</a>.
+      Otwórz plik i użyj Ctrl+P → „Zapisz jako PDF” (marginesy: Brak, Grafika tła: włączona).
+    </p>
+
+    <h2>CAB Centrum Analizy Badań — materiały firmowe</h2>
+    <h3>Wizytówka firmowa — przód i tył</h3>
+    <iframe src="wizytowka-cab.html" style="height: 700px" title="Wizytówka CAB"></iframe>
+    <h3>Ulotka A4 — szybki przegląd firmy</h3>
+    <iframe src="oferta-cab.html" style="height: 1300px" title="Ulotka CAB A4"></iframe>
+
+    <h2>Marek Andryszczyk — wersje osobiste</h2>
+    <h3>Wizytówka osobista</h3>
+    <iframe src="wizytowka-osobista.html" style="height: 700px" title="Wizytówka osobista"></iframe>
+    <h3>Oferta osobista A4</h3>
+    <iframe src="oferta-osobista.html" style="height: 1300px" title="Oferta osobista A4"></iframe>
+  </div>
+</body>
+</html>

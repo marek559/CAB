@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Marek Andryszczyk — oferta osobista A4</title>
+  <link rel="stylesheet" href="druk.css" />
+  <style>
+    @page { size: A4; margin: 0; }
+
+    .sheet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 210mm;
+      height: 297mm;
+      overflow: hidden;
+      background: #fff;
+    }
+    .pad { padding-left: 15mm; padding-right: 15mm; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      font-family: var(--f-mono);
+      font-weight: 500;
+      font-size: 8.5pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .eyebrow::before { content: ""; width: 7mm; height: 0.35mm; background: currentColor; }
+
+    /* ---------- belka ---------- */
+    .band {
+      position: relative;
+      flex: none;
+      height: 84mm;
+      overflow: hidden;
+      background: var(--blue);
+      color: #fff;
+    }
+    .arcs { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .arcs circle { fill: none; stroke: rgba(255, 255, 255, 0.26); stroke-width: 2; }
+    .band__top {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 9mm;
+    }
+    .chip {
+      display: inline-flex;
+      padding: 2.6mm 5mm 2.6mm 2.6mm;
+      border-radius: 4mm;
+      background: #fff;
+      box-shadow: 0 3mm 8mm -4mm rgba(11, 13, 18, 0.45);
+    }
+    .chip .logo__mark { width: 11mm; height: 11mm; border-radius: 2.8mm; font-size: 14.5pt; }
+    .chip .logo__name { font-size: 14pt; }
+    .chip .logo__name small { font-size: 7pt; }
+    .band__label { font-family: var(--f-mono); font-weight: 500; font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85); }
+    .band__body { position: relative; padding-top: 7mm; }
+    .band .eyebrow { color: rgba(255, 255, 255, 0.85); }
+    .band h1 {
+      max-width: 165mm;
+      margin-top: 4mm;
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: 27pt;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+    .band h1 .hl { color: var(--blue-soft); }
+    .band__lead { max-width: 160mm; margin-top: 3.5mm; font-size: 11pt; line-height: 1.5; color: rgba(255, 255, 255, 0.92); }
+    .band__lead strong { color: #fff; }
+
+    /* ---------- liczby ---------- */
+    .stats {
+      flex: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 6mm;
+      border-top: 0.3mm solid var(--line);
+      border-bottom: 0.3mm solid var(--line);
+    }
+    .stats div { padding: 3mm 0 3mm 4mm; }
+    .stats div:first-child { padding-left: 0; }
+    .stats div + div { border-left: 0.3mm solid var(--line); }
+    .stats b { display: block; font-family: var(--f-head); font-size: 20pt; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+    .stats span { display: block; margin-top: 1.2mm; font-size: 9pt; line-height: 1.25; color: var(--muted); }
+
+    /* ---------- kompetencje ---------- */
+    .skills { flex: none; margin-top: 6mm; }
+    .skills__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; margin-top: 4mm; }
+    .col__head {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      padding-bottom: 3mm;
+      border-bottom: 0.45mm solid var(--ink);
+    }
+    .ico { display: grid; place-items: center; flex: none; width: 9mm; height: 9mm; border-radius: 2.6mm; background: #EEF2FF; }
+    .ico svg { width: 5mm; height: 5mm; fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .col__head h2 { font-family: var(--f-head); font-weight: 700; font-size: 15pt; letter-spacing: -0.03em; }
+    .items li { position: relative; padding: 2mm 0 2mm 6mm; border-bottom: 0.3mm solid var(--line); }
+    .items li::before { content: ""; position: absolute; left: 0; top: 4.4mm; width: 3.4mm; height: 0.5mm; background: var(--blue); }
+    .items h3 { font-family: var(--f-head); font-weight: 700; font-size: 11pt; letter-spacing: -0.01em; }
+    .items p { margin-top: 0.8mm; font-size: 9.5pt; line-height: 1.4; color: var(--slate); }
+
+    /* ---------- proces ---------- */
+    .work { flex: none; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 6mm; margin-top: 6mm; }
+    .work__main h2 { margin-top: 2.4mm; font-family: var(--f-head); font-weight: 700; font-size: 16pt; letter-spacing: -0.03em; line-height: 1.1; }
+    .work__text { margin-top: 2.4mm; font-size: 10pt; line-height: 1.5; color: var(--slate); }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin-top: 3.5mm; }
+    .steps li { font-size: 8.6pt; font-weight: 600; line-height: 1.25; }
+    .steps span { display: grid; place-items: center; width: 6.5mm; height: 6.5mm; margin-bottom: 1.6mm; border-radius: 50%; background: var(--blue); font-family: var(--f-mono); font-size: 7.5pt; color: #fff; }
+    .deliver { padding: 4.5mm 5mm; border-radius: 3.5mm; background: var(--canvas); border: 0.3mm solid var(--line); }
+    .deliver h2 { font-family: var(--f-head); font-weight: 700; font-size: 13pt; letter-spacing: -0.02em; }
+    .deliver ul { margin-top: 2.6mm; }
+    .deliver li { position: relative; padding-left: 5.5mm; margin-top: 2mm; font-size: 9.5pt; line-height: 1.35; color: var(--slate); }
+    .deliver li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.8mm;
+      width: 3.4mm;
+      height: 3.4mm;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.2 4.8 9 10 3' fill='none' stroke='%232E5BFF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    /* ---------- stopka ---------- */
+    .footer { flex: 1; display: flex; flex-direction: column; justify-content: center; margin-top: 6mm; padding-top: 5mm; padding-bottom: 5mm; background: var(--ink); color: #fff; }
+    .footer__top { display: flex; justify-content: space-between; align-items: center; gap: 8mm; }
+    .footer__cta { font-family: var(--f-head); font-weight: 700; font-size: 17pt; line-height: 1.15; letter-spacing: -0.03em; }
+    .footer__cta span { color: var(--blue-light); }
+    .footer .logo { color: #fff; }
+    .footer .logo__mark { background: #fff; color: var(--ink); width: 10mm; height: 10mm; border-radius: 2.6mm; font-size: 13pt; }
+    .footer .logo__name { font-size: 12.5pt; border-color: rgba(255, 255, 255, 0.35); }
+    .footer .logo__name small { color: rgba(255, 255, 255, 0.75); font-size: 7pt; }
+    .footer dl {
+      display: flex;
+      justify-content: space-between;
+      gap: 6mm;
+      margin: 3.5mm 0 0;
+      padding-top: 3.5mm;
+      border-top: 0.3mm solid rgba(255, 255, 255, 0.2);
+    }
+    .footer dt { font-family: var(--f-mono); font-weight: 500; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); }
+    .footer dd a { color: inherit; text-decoration: none; }
+    .footer dd { margin: 1mm 0 0; font-family: var(--f-head); font-weight: 700; font-size: 11pt; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <div class="howto">
+    <strong>Oferta A4 do wysyłki mailem.</strong> Zapis do PDF: Ctrl+P → „Zapisz jako PDF”, format A4,
+    marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>.
+  </div>
+
+  <article class="sheet">
+    <!-- belka -->
+    <header class="band">
+      <svg class="arcs" aria-hidden="true"></svg>
+      <div class="band__top pad">
+        <span class="chip">
+          <span class="logo">
+            <span class="logo__mark"><b>MA<i class="dot"></i></b></span>
+            <span class="logo__name">Marek Andryszczyk<small>mgr inż.</small></span>
+          </span>
+        </span>
+        <span class="band__label">Oferta technologiczna · 2026</span>
+      </div>
+      <div class="band__body pad">
+        <p class="eyebrow">Badania · Innowacje · Wdrożenia</p>
+        <h1>Szukam <span class="hl">rozwiązań</span> tam, gdzie inni widzą ograniczenia</h1>
+        <p class="band__lead">
+          Łączę medycynę, inżynierię i analizę danych. Pomagam firmom sprawdzić pomysł pomiarem
+          i doprowadzić rozwiązanie do <strong>wdrożenia lub ochrony patentowej</strong>.
+        </p>
+      </div>
+    </header>
+
+    <!-- liczby -->
+    <div class="stats pad" style="margin-left:15mm;margin-right:15mm;padding:0">
+      <div><b>3</b><span>patenty w mocy</span></div>
+      <div><b>4</b><span>zgłoszenia w toku</span></div>
+      <div><b>~30</b><span>projektów B+R z firmami</span></div>
+      <div><b>4</b><span>wdrożenia w firmach</span></div>
+    </div>
+
+    <!-- kompetencje -->
+    <section class="skills pad">
+      <p class="eyebrow">Zakres kompetencji</p>
+      <div class="skills__cols">
+        <div>
+          <div class="col__head">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="4" rx="1" /><rect x="7" y="18" width="10" height="4" rx="1" /><path d="M10 6v3c0 1 1 1.5 1 3s-1 2-1 3v3M14 6v3c0 1-1 1.5-1 3s1 2 1 3v3" /></svg></span>
+            <h2>Badania i inżynieria</h2>
+          </div>
+          <ul class="items">
+            <li><h3>Badania mechaniczne i wytrzymałościowe</h3><p>Próby materiałów, połączeń i gotowych wyrobów</p></li>
+            <li><h3>Analizy MES</h3><p>Symulacje konstrukcji pod obciążeniem</p></li>
+            <li><h3>Badania materiałów i jakości</h3><p>Porównanie wariantów i powtarzalność produkcji</p></li>
+            <li><h3>Nowe konstrukcje i procesy</h3><p>Od koncepcji po patent i wdrożenie</p></li>
+          </ul>
+        </div>
+        <div>
+          <div class="col__head">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2" /><circle cx="5" cy="18" r="2" /><circle cx="12" cy="12" r="2" /><circle cx="19" cy="12" r="2" /><path d="M6.8 7 10.4 10.8M6.8 17l3.6-3.8M14 12h3" /></svg></span>
+            <h2>Dane, AI i innowacje</h2>
+          </div>
+          <ul class="items">
+            <li><h3>Analizy statystyczne</h3><p>Plan badań i analiza wyników (Statistica)</p></li>
+            <li><h3>Python i uczenie maszynowe</h3><p>Modele predykcyjne na danych z badań</p></li>
+            <li><h3>Wdrażanie LLM i AI</h3><p>Modele językowe i AI dopasowane do firmy</p></li>
+            <li><h3>Projekty B+R i ochrona IP</h3><p>Raporty, opinie o innowacyjności, patenty</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- proces -->
+    <section class="work pad">
+      <div class="work__main">
+        <p class="eyebrow">Jak pracuję</p>
+        <h2>Jasny proces, wymierny efekt</h2>
+        <p class="work__text">
+          Od analizy i prototypu po wdrożenie technologii gotowej do dalszego rozwoju. Pracujemy w stałym
+          kontakcie — pokazuję wyniki na bieżąco i dopasowuję kolejne kroki do Twoich potrzeb.
+        </p>
+        <ol class="steps">
+          <li><span>01</span>Pytanie i hipoteza</li>
+          <li><span>02</span>Procedura pomiarowa</li>
+          <li><span>03</span>Badania i dane</li>
+          <li><span>04</span>Analiza i model</li>
+          <li><span>05</span>Wdrożenie i ochrona</li>
+        </ol>
+      </div>
+      <div class="deliver">
+        <h2>Co dostarczam</h2>
+        <ul>
+          <li>raport z badań i analiz</li>
+          <li>model, symulacja lub prototyp</li>
+          <li>dokumentacja B+R lub patentowa</li>
+          <li>wsparcie wdrożenia i rozwoju</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- stopka -->
+    <footer class="footer pad">
+      <div class="footer__top">
+        <p class="footer__cta">Masz wyzwanie technologiczne?<br /><span>Porozmawiajmy o rozwiązaniu</span></p>
+        <span class="logo">
+          <span class="logo__mark"><b>MA<i class="dot"></i></b></span>
+          <span class="logo__name">Marek Andryszczyk<small>mgr inż. · Bydgoszcz</small></span>
+        </span>
+      </div>
+      <dl>
+        <div><dt>Telefon</dt><dd><a href="tel:+48609222466">+48 609 222 466</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:andryszczyk.marek@gmail.com">andryszczyk.marek@gmail.com</a></dd></div>
+        <div><dt>WWW</dt><dd><a href="https://andryszczyk.eu/">andryszczyk.eu</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/marek-andryszczyk-11485a90/">Marek Andryszczyk</a></dd></div>
+      </dl>
+    </footer>
+  </article>
+
+  <script src="luki.js"></script>
+  <script>drawArcs(".band", ".chip .dot", { first: 12, step: 11, count: 18, width: 2 });</script>
+</body>
+</html>

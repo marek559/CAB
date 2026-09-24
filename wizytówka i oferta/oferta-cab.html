@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>CAB Centrum Analizy Badań — oferta A4</title>
+  <link rel="stylesheet" href="druk.css" />
+  <style>
+    @page { size: A4; margin: 0; }
+
+    .sheet { position: relative; display: flex; flex-direction: column; width: 210mm; height: 297mm; overflow: hidden; background: #fff; }
+    .pad { padding-left: 15mm; padding-right: 15mm; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 3mm;
+      font-family: var(--f-mono);
+      font-weight: 500;
+      font-size: 8.5pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+    .eyebrow::before { content: ""; width: 7mm; height: 0.35mm; background: currentColor; }
+
+    /* ---------- belka ---------- */
+    .band { position: relative; flex: none; height: 82mm; overflow: hidden; background: var(--blue); color: #fff; }
+    .arcs { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .arcs circle { fill: none; stroke: rgba(255, 255, 255, 0.26); stroke-width: 2; }
+    .band__top { position: relative; display: flex; justify-content: space-between; align-items: center; padding-top: 9mm; }
+    .chip {
+      display: inline-flex;
+      padding: 3mm 4.5mm;
+      border-radius: 4mm;
+      background: #fff;
+      box-shadow: 0 3mm 8mm -4mm rgba(11, 13, 18, 0.45);
+    }
+    .chip .cab-logo { height: 11mm; }
+    .band__label { text-align: right; font-family: var(--f-mono); font-weight: 500; font-size: 8.5pt; line-height: 1.6; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 255, 0.88); }
+    .band__body { position: relative; padding-top: 6.5mm; }
+    .band .eyebrow { color: rgba(255, 255, 255, 0.88); }
+    .band h1 { max-width: 170mm; margin-top: 3.5mm; font-family: var(--f-head); font-weight: 700; font-size: 27pt; line-height: 1.05; letter-spacing: -0.04em; }
+    .band h1 .hl { color: var(--blue-soft); }
+    .band__lead { max-width: 165mm; margin-top: 3.5mm; font-size: 11pt; line-height: 1.5; color: rgba(255, 255, 255, 0.92); }
+    .band__lead strong { color: #fff; }
+
+    /* ---------- liczby ---------- */
+    .stats {
+      flex: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 5mm 15mm 0;
+      border-top: 0.3mm solid var(--line);
+      border-bottom: 0.3mm solid var(--line);
+    }
+    .stats div { padding: 2.6mm 0 2.6mm 4mm; }
+    .stats div:first-child { padding-left: 0; }
+    .stats div + div { border-left: 0.3mm solid var(--line); }
+    .stats b { display: block; font-family: var(--f-head); font-size: 20pt; font-weight: 700; letter-spacing: -0.04em; line-height: 1; }
+    .stats span { display: block; margin-top: 1.2mm; font-size: 9pt; line-height: 1.25; color: var(--muted); }
+
+    /* ---------- obszary i usługi ---------- */
+    .skills { flex: none; margin-top: 5mm; }
+    .skills__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 10mm; }
+    .col__head { display: flex; align-items: center; gap: 3mm; padding-bottom: 2.2mm; border-bottom: 0.45mm solid var(--ink); }
+    .ico { display: grid; place-items: center; flex: none; width: 9mm; height: 9mm; border-radius: 2.6mm; background: #EEF2FF; }
+    .ico svg { width: 5mm; height: 5mm; fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .col__head h2 { font-family: var(--f-head); font-weight: 700; font-size: 15pt; letter-spacing: -0.03em; }
+    .items li { position: relative; padding: 1.3mm 0 1.3mm 6mm; border-bottom: 0.3mm solid var(--line); }
+    .items li::before { content: ""; position: absolute; left: 0; top: 3.7mm; width: 3.4mm; height: 0.5mm; background: var(--blue); }
+    .items h3 { font-family: var(--f-head); font-weight: 700; font-size: 11pt; letter-spacing: -0.01em; }
+    .items p { margin-top: 0.6mm; font-size: 9.5pt; line-height: 1.4; color: var(--slate); }
+
+    /* ---------- współpraca ---------- */
+    .work { flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; margin-top: 5mm; align-items: start; }
+    .work__main h2 { margin-top: 2.4mm; font-family: var(--f-head); font-weight: 700; font-size: 16pt; letter-spacing: -0.03em; line-height: 1.1; }
+    .work__text { margin-top: 2.4mm; font-size: 10pt; line-height: 1.5; color: var(--slate); }
+    .team { margin-top: 3mm; font-size: 9.5pt; line-height: 1.45; color: var(--slate); }
+    .team strong { color: var(--ink); }
+    .programs { padding: 4mm 4.5mm; border-radius: 3.5mm; background: var(--canvas); border: 0.3mm solid var(--line); }
+    .programs h2 { font-family: var(--f-head); font-weight: 700; font-size: 13pt; letter-spacing: -0.02em; }
+    .programs p { margin-top: 1.2mm; font-size: 9pt; line-height: 1.4; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-top: 2.6mm; }
+    .chips span { padding: 1mm 2.4mm; border-radius: 99mm; background: #fff; border: 0.3mm solid var(--line); font-size: 8.8pt; font-weight: 700; color: var(--ink); }
+
+    /* ---------- stopka ---------- */
+    .footer { flex: 1; display: flex; flex-direction: column; justify-content: center; margin-top: 5mm; padding-top: 5mm; padding-bottom: 5mm; background: var(--ink); color: #fff; }
+    .footer__top { display: flex; justify-content: space-between; align-items: center; gap: 8mm; }
+    .footer__cta { font-family: var(--f-head); font-weight: 700; font-size: 17pt; line-height: 1.15; letter-spacing: -0.03em; }
+    .footer__cta span { color: var(--blue-light); }
+    .footer .chip { padding: 2.2mm 3.4mm; border-radius: 3mm; box-shadow: none; }
+    .footer .chip .cab-logo { height: 8.5mm; }
+    .footer dl { display: flex; justify-content: space-between; gap: 5mm; margin: 3mm 0 0; padding-top: 3mm; border-top: 0.3mm solid rgba(255, 255, 255, 0.2); }
+    .footer dt { font-family: var(--f-mono); font-weight: 500; font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 255, 0.72); }
+    .footer dd a { color: inherit; text-decoration: none; }
+    .footer dd { margin: 1mm 0 0; font-family: var(--f-head); font-weight: 700; font-size: 11pt; white-space: nowrap; }
+    .footer__company { display: flex; justify-content: space-between; gap: 6mm; margin-top: 2.6mm; font-size: 8.5pt; font-weight: 700; line-height: 1.45; color: rgba(255, 255, 255, 0.85); }
+    .footer__company .r { text-align: right; }
+    .note { margin-top: 2mm; font-size: 7.5pt; line-height: 1.4; color: rgba(255, 255, 255, 0.6); }
+  </style>
+</head>
+<body>
+  <div class="howto">
+    <strong>Ulotka CAB — A4 do wysyłki mailem.</strong> Zapis do PDF: Ctrl+P → „Zapisz jako PDF”, format A4,
+    marginesy: <strong>Brak</strong>, zaznacz <strong>Grafika tła</strong>.
+  </div>
+
+  <article class="sheet">
+    <!-- belka -->
+    <header class="band">
+      <svg class="arcs" aria-hidden="true"></svg>
+      <div class="band__top pad">
+        <span class="chip">
+          <span class="cab-logo cab-logo--full"><img src="cab-logo.png" alt="CAB Centrum Analizy Badań" /><i class="apex"></i></span>
+        </span>
+        <span class="band__label">Oferta · 2026<br />cab-innowacje.com</span>
+      </div>
+      <div class="band__body pad">
+        <p class="eyebrow">Spin-off · Technologia · B+R · Wdrożenia</p>
+        <h1>Rozwiązujemy problemy <span class="hl">technologiczne</span> przedsiębiorstw</h1>
+        <p class="band__lead">
+          Od diagnozy i badań, przez optymalizację konstrukcji, materiałów i procesów,
+          po <strong>dokumentację B+R i wdrożenie w firmie</strong>.
+        </p>
+      </div>
+    </header>
+
+    <!-- liczby -->
+    <div class="stats">
+      <div><b>5</b><span>obszarów technologicznych</span></div>
+      <div><b>~30</b><span>projektów B+R z firmami</span></div>
+      <div><b>3*</b><span>patenty zespołu w mocy</span></div>
+      <div><b>4*</b><span>wdrożenia w przemyśle</span></div>
+    </div>
+
+    <!-- obszary i usługi -->
+    <section class="skills pad">
+      <div class="skills__cols">
+        <div>
+          <div class="col__head">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7z" /><path d="m2 12 10 5 10-5" /><path d="m2 17 10 5 10-5" /></svg></span>
+            <h2>Obszary technologiczne</h2>
+          </div>
+          <ul class="items">
+            <li><h3>Energia i OZE</h3><p>Efektywność energetyczna, fotowoltaika, audyty</p></li>
+            <li><h3>Stomatologia, implanty i DSD</h3><p>Cyfrowy workflow, materiały, walidacja</p></li>
+            <li><h3>Materiały i ich właściwości</h3><p>Dobór, modyfikacja i badania materiałów</p></li>
+            <li><h3>Konstrukcje i produkty</h3><p>Mniejsza masa, prostszy montaż, niezawodność</p></li>
+            <li><h3>Technologie i procesy produkcyjne</h3><p>Mniej strat, stabilna jakość, wydajna linia</p></li>
+          </ul>
+        </div>
+        <div>
+          <div class="col__head">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3" /><path d="M7 15h10" /></svg></span>
+            <h2>Zakres usług</h2>
+          </div>
+          <ul class="items">
+            <li><h3>Diagnoza technologiczna</h3><p>Przyczyna problemu i kierunek rozwiązania</p></li>
+            <li><h3>Badania i analizy</h3><p>Pomiary, testy, analizy MES i analiza danych</p></li>
+            <li><h3>Optymalizacja i prototyp</h3><p>Warianty, prototyp i walidacja rozwiązania</p></li>
+            <li><h3>Dokumentacja B+R</h3><p>Agendy badawcze, opisy technologii, audyty</p></li>
+            <li><h3>Wdrożenie w firmie</h3><p>Implementacja, pomiar efektów, dalszy rozwój</p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- współpraca -->
+    <section class="work pad">
+      <div class="work__main">
+        <p class="eyebrow">Jak pracujemy</p>
+        <h2>Jasny proces, wymierny efekt</h2>
+        <p class="work__text">
+          Do wyzwania dobieramy zespół naukowców i doradców B+R. Z klientem pracujemy w stałym kontakcie —
+          na bieżąco pokazujemy wyniki i dopasowujemy kolejne kroki do jego potrzeb.
+        </p>
+      </div>
+      <div class="programs">
+        <h2>Doświadczenie w programach B+R</h2>
+        <div class="chips">
+          <span>SMART / FENG</span><span>Bony na innowacje</span><span>FBW 3.0</span>
+          <span>Kredyt Ekologiczny</span><span>FEnIKS</span><span>Horyzont 2020 i GEKON</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- stopka -->
+    <footer class="footer pad">
+      <div class="footer__top">
+        <p class="footer__cta">Masz problem technologiczny?<br /><span>Zacznijmy od jego uporządkowania</span></p>
+        <span class="chip"><span class="cab-logo cab-logo--mark"><img src="cab-znak.png" alt="CAB" /></span></span>
+      </div>
+      <dl>
+        <div><dt>Kontakt</dt><dd><a href="https://andryszczyk.eu/">Marek Andryszczyk</a></dd></div>
+        <div><dt>Telefon</dt><dd><a href="tel:+48609222466">+48 609 222 466</a></dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:andryszczyk.marek@gmail.com">andryszczyk.marek@gmail.com</a></dd></div>
+        <div><dt>WWW</dt><dd><a href="https://cab-innowacje.com/">cab-innowacje.com</a></dd></div>
+      </dl>
+      <div class="footer__company">
+        <span>CAB Centrum Analizy Badań sp. z o.o.<br />ul. Romualda Traugutta 11 lok. 1, 85-122 Bydgoszcz</span>
+        <span class="r">NIP 9532794092 · REGON 524328433<br />KRS 0001016597</span>
+      </div>
+      <p class="note">* Dorobek twórczy członków zespołu CAB. Prawa należą do firm partnerskich wskazanych w rejestrze Urzędu Patentowego RP.</p>
+    </footer>
+  </article>
+
+  <script src="luki.js"></script>
+  <script>drawArcs(".band", ".chip .apex", { first: 10, step: 11, count: 18, width: 2 });</script>
+</body>
+</html>
