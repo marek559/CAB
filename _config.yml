@@ -1,0 +1,8 @@
+# Ustawienia GitHub Pages (Jekyll) — strona CAB.
+# Pliki .md to notatki projektu, nie podstrony. Bez tej listy GitHub Pages
+# publikuje je jako strony HTML (np. /TRESC.html, /KONTEKST.html),
+# a Google może je indeksować jako duplikat treści strony.
+exclude:
+  - KONTEKST.md
+  - TRESC.md
+  - README.md

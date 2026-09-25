@@ -14,10 +14,10 @@
 
 | Pole | Treść |
 |---|---|
-| Tytuł (`<title>`) | CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia |
-| Opis (`description`) | CAB Centrum Analizy Badań z Bydgoszczy rozwiązuje problemy technologiczne firm: diagnoza, badania, optymalizacja konstrukcji i procesów, projekty B+R i wdrożenia. |
+| Tytuł (`<title>`) | CAB Centrum Analizy Badań — B+R i wdrożenia dla firm |
+| Opis (`description`) | CAB z Bydgoszczy to partner technologiczny firm: diagnoza problemu, badania, optymalizacja konstrukcji, materiałów i procesów, dokumentacja B+R i wdrożenia. |
 | Adres kanoniczny | https://cab-innowacje.com/ |
-| Podgląd linku — tytuł (`og:title`) | CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia |
+| Podgląd linku — tytuł (`og:title`) | CAB Centrum Analizy Badań — B+R i wdrożenia dla firm |
 | Podgląd linku — opis (`og:description`) | Rozwiązujemy problemy technologiczne przedsiębiorstw: od diagnozy i badań, przez optymalizację konstrukcji, materiałów i procesów, po dokumentację B+R i wdrożenie w firmie. |
 | Podgląd linku — obrazek (`og:image`) | https://cab-innowacje.com/assets/og-cab.png |
 | Opis obrazka (`og:image:alt`) | CAB Centrum Analizy Badań — rozwiązujemy problemy technologiczne przedsiębiorstw |
@@ -290,10 +290,10 @@ Bydgoszcz · Polska
 
 | Pole | Treść |
 |---|---|
-| Tytuł (`<title>`) | Polityka prywatności — CAB Centrum Analizy Badań |
-| Opis (`description`) | Polityka prywatności CAB Centrum Analizy Badań sp. z o.o. — jak wykorzystujemy dane przekazane w zapytaniach. |
+| Tytuł (`<title>`) | Polityka prywatności i cookies — CAB Centrum Analizy Badań |
+| Opis (`description`) | Polityka prywatności CAB Centrum Analizy Badań: jakie dane z zapytań przetwarzamy, w jakim celu i jak długo, komu je powierzamy oraz jakie masz prawa. |
 | Adres kanoniczny | https://cab-innowacje.com/polityka-prywatnosci.html |
-| Podgląd linku — tytuł (`og:title`) | Polityka prywatności — CAB Centrum Analizy Badań |
+| Podgląd linku — tytuł (`og:title`) | Polityka prywatności i cookies — CAB Centrum Analizy Badań |
 | Podgląd linku — opis (`og:description`) | Jak CAB Centrum Analizy Badań sp. z o.o. wykorzystuje dane przekazane w zapytaniach — wyłącznie do kontaktu. |
 | Podgląd linku — obrazek (`og:image`) | https://cab-innowacje.com/assets/og-cab.png |
 | Opis obrazka (`og:image:alt`) | CAB Centrum Analizy Badań — rozwiązujemy problemy technologiczne przedsiębiorstw |

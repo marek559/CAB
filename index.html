@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia</title>
-  <meta name="description" content="CAB Centrum Analizy Badań z Bydgoszczy rozwiązuje problemy technologiczne firm: diagnoza, badania, optymalizacja konstrukcji i procesów, projekty B+R i wdrożenia." />
+  <title>CAB Centrum Analizy Badań — B+R i wdrożenia dla firm</title>
+  <meta name="description" content="CAB z Bydgoszczy to partner technologiczny firm: diagnoza problemu, badania, optymalizacja konstrukcji, materiałów i procesów, dokumentacja B+R i wdrożenia." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="CAB Centrum Analizy Badań sp. z o.o." />
   <meta name="theme-color" content="#FFFFFF" />
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="CAB Centrum Analizy Badań" />
   <meta property="og:locale" content="pl_PL" />
-  <meta property="og:title" content="CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia" />
+  <meta property="og:title" content="CAB Centrum Analizy Badań — B+R i wdrożenia dla firm" />
   <meta property="og:description" content="Rozwiązujemy problemy technologiczne przedsiębiorstw: od diagnozy i badań, przez optymalizację konstrukcji, materiałów i procesów, po dokumentację B+R i wdrożenie w firmie." />
   <meta property="og:url" content="https://cab-innowacje.com/" />
   <meta property="og:image" content="https://cab-innowacje.com/assets/og-cab.png" />
@@ -23,7 +23,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="CAB Centrum Analizy Badań — rozwiązujemy problemy technologiczne przedsiębiorstw" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CAB Centrum Analizy Badań — partner technologiczny, B+R i wdrożenia" />
+  <meta name="twitter:title" content="CAB Centrum Analizy Badań — B+R i wdrożenia dla firm" />
   <meta name="twitter:description" content="Diagnoza, badania, optymalizacja konstrukcji i procesów, projekty B+R i wdrożenia w przedsiębiorstwach." />
   <meta name="twitter:image" content="https://cab-innowacje.com/assets/og-cab.png" />
   <meta name="twitter:image:alt" content="CAB Centrum Analizy Badań — rozwiązujemy problemy technologiczne przedsiębiorstw" />
@@ -42,30 +42,47 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Dane spółki dla wyszukiwarek (wg odpisu KRS) -->
+  <!-- Dane spółki dla wyszukiwarek (wg odpisu KRS) — tylko dane widoczne na stronie.
+       WebSite podaje Google nazwę witryny wyświetlaną w wynikach wyszukiwania. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CAB Centrum Analizy Badań",
-    "url": "https://cab-innowacje.com/",
-    "logo": "https://cab-innowacje.com/assets/logo-cab.png",
-    "image": "https://cab-innowacje.com/assets/og-cab.png",
-    "legalName": "CAB Centrum Analizy Badań sp. z o.o.",
-    "email": "andryszczyk.marek@gmail.com",
-    "telephone": "+48 609 222 466",
-    "taxID": "9532794092",
-    "identifier": [
-      { "@type": "PropertyValue", "propertyID": "KRS", "value": "0001016597" },
-      { "@type": "PropertyValue", "propertyID": "REGON", "value": "524328433" }
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ul. Romualda Traugutta 11 lok. 1",
-      "postalCode": "85-122",
-      "addressLocality": "Bydgoszcz",
-      "addressCountry": "PL"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cab-innowacje.com/#organizacja",
+        "name": "CAB Centrum Analizy Badań",
+        "url": "https://cab-innowacje.com/",
+        "logo": "https://cab-innowacje.com/assets/logo-cab.png",
+        "image": "https://cab-innowacje.com/assets/og-cab.png",
+        "description": "Rozwiązujemy problemy technologiczne przedsiębiorstw. Od diagnozy i badań, przez optymalizację konstrukcji, materiałów i procesów, po dokumentację i wdrożenie w firmie.",
+        "slogan": "Analiza · B+R · Wdrożenia",
+        "legalName": "CAB Centrum Analizy Badań sp. z o.o.",
+        "email": "andryszczyk.marek@gmail.com",
+        "telephone": "+48 609 222 466",
+        "taxID": "9532794092",
+        "identifier": [
+          { "@type": "PropertyValue", "propertyID": "KRS", "value": "0001016597" },
+          { "@type": "PropertyValue", "propertyID": "REGON", "value": "524328433" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Romualda Traugutta 11 lok. 1",
+          "postalCode": "85-122",
+          "addressLocality": "Bydgoszcz",
+          "addressCountry": "PL"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cab-innowacje.com/#witryna",
+        "name": "CAB Centrum Analizy Badań",
+        "alternateName": "CAB",
+        "url": "https://cab-innowacje.com/",
+        "inLanguage": "pl-PL",
+        "publisher": { "@id": "https://cab-innowacje.com/#organizacja" }
+      }
+    ]
   }
   </script>
 </head>

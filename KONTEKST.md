@@ -12,9 +12,9 @@ są w `README.md` tamtego repozytorium.
 odtworzenie strony) i `TRESC.md` (pełne teksty strony i materiałów do druku). Plan dalszej pracy dla obu stron
 jest w osobnym planie HTML (sekcja 9).
 
-> Plik leży w publicznym repozytorium i jest dostępny także pod adresem strony
-> (`cab-innowacje.com/KONTEKST.md`). Nie wpisuj tu danych poufnych: PESEL, adresu domowego,
-> haseł ani notatek wewnętrznych.
+> Plik leży w publicznym repozytorium na GitHubie. Od 25.09.2026 `_config.yml` wyłącza pliki `.md`
+> z publikacji pod adresem strony, ale samo repozytorium nadal jest publiczne. Nie wpisuj tu danych
+> poufnych: PESEL, adresu domowego, haseł ani notatek wewnętrznych.
 
 ---
 
@@ -182,6 +182,18 @@ Wzorem był pakiet z lumafi.pl. Obie strony CAB mają:
 - pełne Open Graph i Twitter Card z obrazkiem 1200×630 `assets/og-cab.png`;
 - dane strukturalne JSON-LD `Organization` (CAB);
 - ikony `favicon.svg`, 32, 180 (Apple), 192 i 512 px oraz `site.webmanifest`.
+
+Optymalizacja pod Google (25.09.2026):
+- tytuły 50–60 znaków i opisy 140–160 znaków, pełna lista w `TRESC.md`;
+- JSON-LD na stronie głównej to `@graph`: `Organization` z opisem i sloganem oraz `WebSite`
+  (nazwa witryny w wynikach Google). Typ `Organization`, a nie `ProfessionalService`, bo na stronie
+  nie ma godzin otwarcia ani informacji o przyjmowaniu klientów pod adresem siedziby;
+- `404.html` ma `noindex` i ścieżki od „/”, bo GitHub Pages pokazuje ją pod każdym błędnym adresem;
+- `_config.yml` wyłącza `KONTEKST.md`, `TRESC.md` i `README.md` z publikacji. Wcześniej GitHub Pages
+  (Jekyll) wystawiał je jako strony `/KONTEKST.html` i `/TRESC.html`, co dawało duplikat treści;
+- `sitemap.xml` zawiera tylko `/` i `/polityka-prywatnosci.html`. Nie ma w niej przekierowania
+  `marek-andryszczyk/`, stron do druku ani 404. Mapę zgłasza się w Search Console jako
+  `https://cab-innowacje.com/sitemap.xml`, bo usługa jest zweryfikowana dla domeny (rekord TXT).
 
 Wizytówka Marka ma taki sam pakiet (`ProfilePage` / `Person`, własny obrazek podglądu) w swoim repozytorium.
 

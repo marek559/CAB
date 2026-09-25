@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nie znaleziono strony (404) — CAB Centrum Analizy Badań</title>
+  <meta name="description" content="Pod tym adresem nie ma strony. Przejdź na stronę główną CAB Centrum Analizy Badań albo napisz do nas." />
+  <!-- Strona błędu: nie indeksować i nie dodawać do sitemap.xml -->
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <!-- GitHub Pages pokazuje ten plik pod każdym nieistniejącym adresem (także zagnieżdżonym),
+       dlatego wszystkie ścieżki zaczynają się od „/”. -->
+
+  <!-- Ikony -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+
+  <!-- Fonty wspólne z lumafi.pl, hostowane lokalnie (assets/fonts) -->
+  <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <!-- ===================== NAWIGACJA ===================== -->
+  <header class="nav" id="top">
+    <div class="nav__pill">
+      <a class="brand" href="/" aria-label="CAB Centrum Analizy Badań — strona główna">
+        <img class="brand__logo" src="/assets/logo-cab-znak.png" alt="CAB" width="69" height="28" />
+        <span class="brand__sub">Centrum<br />Analizy Badań</span>
+      </a>
+
+      <div class="nav__drawer" id="nav-drawer">
+        <nav class="nav__menu" aria-label="Nawigacja główna">
+          <a href="/#o-nas"><i class="nav__dot" aria-hidden="true"></i>O nas</a>
+          <a href="/#proces"><i class="nav__dot" aria-hidden="true"></i>Jak działamy</a>
+          <a href="/#obszary"><i class="nav__dot" aria-hidden="true"></i>Obszary</a>
+          <div class="nav__team">
+            <button class="nav__team-btn" id="team-btn" type="button" aria-expanded="false" aria-controls="team-menu"><i class="nav__dot" aria-hidden="true"></i>Zespół<svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" /></svg></button>
+            <div class="nav__team-menu" id="team-menu" hidden>
+              <a href="https://andryszczyk.eu/" target="_blank" rel="noopener">Marek Andryszczyk <span aria-hidden="true">↗</span></a>
+              <a href="https://wirwicki.eu/" target="_blank" rel="noopener">Mateusz Wirwicki <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </nav>
+        <a class="btn btn--accent btn--sm nav__cta" href="/#kontakt">Kontakt</a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="legal">
+      <div class="wrap legal__inner">
+        <p class="eyebrow">Błąd 404</p>
+        <h1>Nie ma takiej strony</h1>
+        <p class="legal__summary">
+          Pod tym adresem nic nie znaleźliśmy — strona mogła zostać przeniesiona albo w adresie jest literówka.
+          Zacznij od strony głównej lub napisz do nas, jaki problem technologiczny chcesz rozwiązać.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--dark" href="/">Strona główna <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="/#kontakt">Kontakt</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== STOPKA ===================== -->
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="/" aria-label="CAB Centrum Analizy Badań — strona główna">
+          <img class="brand__logo brand__logo--full" src="/assets/logo-cab.png" alt="CAB Centrum Analizy Badań" width="209" height="48" />
+        </a>
+        <p class="footer__slogan">Analiza · B+R · Wdrożenia</p>
+        <p class="footer__desc">Partner technologiczny przedsiębiorstw: diagnoza, badania, optymalizacja, dokumentacja B+R i wdrożenia.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Nawigacja w stopce">
+        <p class="minilabel">Nawigacja</p>
+        <a href="/#o-nas">O nas</a>
+        <a href="/#proces">Jak działamy</a>
+        <a href="/#obszary">Obszary</a>
+        <a href="/#doswiadczenie">Doświadczenie</a>
+        <a href="https://andryszczyk.eu/" target="_blank" rel="noopener">Marek Andryszczyk ↗</a>
+        <a href="https://wirwicki.eu/" target="_blank" rel="noopener">Mateusz Wirwicki ↗</a>
+        <a href="/#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="footer__col">
+        <p class="minilabel">Kontakt</p>
+        <a href="mailto:andryszczyk.marek@gmail.com">andryszczyk.marek@gmail.com</a>
+        <a href="tel:+48609222466">+48 609 222 466</a>
+        <a href="/polityka-prywatnosci.html">Polityka prywatności</a>
+      </div>
+
+      <!-- Dane spółki wg odpisu KRS (stan na 23.09.2026), zakres wg art. 206 KSH -->
+      <div class="footer__col footer__company">
+        <p class="minilabel">Dane spółki</p>
+        <p class="company__name">CAB Centrum Analizy Badań sp.&nbsp;z&nbsp;o.o.</p>
+        <address>ul. Romualda Traugutta 11 lok. 1<br />85-122 Bydgoszcz</address>
+        <dl class="company__ids">
+          <div><dt>NIP</dt><dd>9532794092</dd></div>
+          <div><dt>REGON</dt><dd>524328433</dd></div>
+          <div><dt>KRS</dt><dd>0001016597</dd></div>
+          <div><dt>Kapitał zakładowy</dt><dd>5 000,00 zł</dd></div>
+        </dl>
+        <p class="company__court">Sąd Rejonowy w Bydgoszczy, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego</p>
+      </div>
+    </div>
+    <div class="wrap footer__bottom">
+      <p>© <span id="year"></span> CAB Centrum Analizy Badań sp. z o.o. · Wszelkie prawa zastrzeżone</p>
+      <p>Bydgoszcz · Polska</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

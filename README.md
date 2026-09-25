@@ -21,6 +21,8 @@ Manrope, JetBrains Mono (pliki w `assets/fonts`, bez Google Fonts).
 | `marek-andryszczyk/` | tylko `index.html` przekierowujący na https://andryszczyk.eu/ |
 | `assets/` | logo (`logo-cab.png`, `logo-cab-znak.png`), ikony, obrazek podglądu linku `og-cab.png`, czcionki |
 | `site.webmanifest`, `sitemap.xml`, `robots.txt` | opis strony dla przeglądarek i wyszukiwarek |
+| `404.html` | strona „Nie ma takiej strony” (noindex, ścieżki od „/”, poza sitemap) |
+| `_config.yml` | ustawienia GitHub Pages: pliki `.md` nie są publikowane pod adresem strony |
 | `wizytówka i oferta/` | wizytówka firmowa i ulotka A4 CAB do druku (HTML → PDF), niewidoczne dla wyszukiwarek |
 | `KONTEKST.md` | pełny kontekst projektu: dane spółki, decyzje, zasady marki, otwarte sprawy |
 | `TRESC.md` | kopia zapasowa pełnych tekstów strony i materiałów do druku |
